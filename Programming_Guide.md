@@ -74,8 +74,8 @@ import com.mtburn.android.sdk.wall.ADVSWallAdLoader;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		//(2) ウォール広告の初期化処理(Contextとmedia_idを渡す)
-		ADVSWallAdLoader.init(context, "YOUR_MEDIA_ID");
+		//(2) ウォール広告の初期化処理(Activityとmedia_idを渡す)
+		ADVSWallAdLoader.init(Activity, "YOUR_MEDIA_ID");
 
 	}
 
@@ -129,21 +129,34 @@ public class MyActivity extends Activity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_main);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-	// (3) ADVSIconAdLoaderを生成(Contextとmedia_idをコンストラクタで渡す)
-	this.iconAdLoader = new ADVSIconAdLoader(this, "YOUR_MEDIA_ID");
+		// (3) ADVSIconAdLoaderを生成(Contextとmedia_idをコンストラクタで渡す)
+		this.iconAdLoader = new ADVSIconAdLoader(this, "YOUR_MEDIA_ID");
 	
-	// (4) アイコン広告ビューを生成
-	this.ADVSIconAdView iconAdView = (ADVSIconAdView) findViewById(R.id.advsIconAdView);
+		// (4) アイコン広告ビューを生成
+		ADVSIconAdView iconAdView = (ADVSIconAdView) findViewById(R.id.advsIconAdView);
 
-	// (5) 広告情報をロードする対象ビューを追加
-	this.iconAdLoader.addIconView(iconAdView);
+		// (5) 広告情報をロードする対象ビューを追加
+		this.iconAdLoader.addIconView(iconAdView);
 
-	// (6) 広告情報をロード
-	this.iconAdLoader.loadAd();
+		// (6) 広告情報をロード
+		this.iconAdLoader.loadAd();
+	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// (7) 広告のリフレッシュ開始
+		iconAdLoader.startAutoRefreshing();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		// (8) 広告のリフレッシュ停止
+		iconAdLoader.stopAutoRefreshing();
 	}
 }
 
@@ -238,7 +251,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ## アイコン広告のリフレッシュ停止
 
-アイコン広告情報は ADVSIconAdLoader によって自動的にリフレッシュされます。
+
 
 デフォルトではリフレッシュされますので、リフレッシュされたくない場合は以下のように設定してください。
 
@@ -256,33 +269,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ```
 
-また、一時停止と再会も可能です。
-
-以下の様にタブの移動などでビューが移動する場合は一時停止、自身のビューに戻ってきた際に再会処理を行うことで余分な通信を減らすことが出来ます。
-
-```
-
-ADVSIconAdLoader iconAdLoader;
-
-@Override
-protected void onResume() {
-	super.onResume();
-
-	// 広告ロードを再開
-	iconAdLoader.startAutoRefreshing();
-
-}
-
-@Override
-protected void onPause() {
-	super.onPause();
-
-	// 広告ロードを一時停止
-	iconAdLoader.stopAutoRefreshing();
-
-}
-
-```
 
 
 # よくある質問
