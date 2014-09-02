@@ -7,7 +7,7 @@
 
 本ドキュメントは MTBurn-Android-SDK を Eclipse のプロジェクトに追加し、実際に使える所までを記したものです。
 
-# 対応環境
+#対応環境
 
 動作する **Android のSDKVersionは 8 以上**になります。
 
@@ -15,7 +15,7 @@
 
 [a@mtburn.com](a@mtburn.com)
 
-# MTBurn-Android-SDKをダウンロード
+#MTBurn-Android-SDKをダウンロード
 
 以下の URL から MTBurn-Android-SDK-Release をダウンロードします。
 
@@ -29,7 +29,7 @@
 MTBurn-Android-SDK-Release
 ```
 
-# MTBurn-Android-SDKライブラリの追加
+#MTBurn-Android-SDKライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
 
@@ -46,7 +46,7 @@ MTBurn-Android-SDK-Release ライブラリを追加。
 
 ![](Install_SDK_Guide_Images/add_mtburn_android_sdk.png)
 
-# GooglePlayServiceライブラリの追加
+#GooglePlayServiceライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
 
