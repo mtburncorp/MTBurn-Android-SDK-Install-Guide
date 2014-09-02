@@ -131,7 +131,7 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 	...
-	//(1) listner を設定
+	//(1) listener を設定
 	wallAdLoader.setOnWallAdLoadListener(wallAdLoadListener);
 	...
     }
@@ -231,7 +231,7 @@ ADVSIconAdLoadListener iconAdLoadListener;
 ADVSIconAdView iconAdView;
 ADVSIconAdViewListener iconAdViewListener;
 
-//(1) ADVSIconAdLoader に listner を設定
+//(1) ADVSIconAdLoader に listener を設定
 iconAdLoader.setOnIconAdLoadListener(iconAdLoadListener);
 
 iconAdLoadListener = new ADVSIconAdLoadListener() {
@@ -252,7 +252,7 @@ iconAdLoadListener = new ADVSIconAdLoadListener() {
 	}
 };
 
-//(5) ADVSIconAdView に listner を設定
+//(5) ADVSIconAdView に listener を設定
 iconAdView.setOnIconADVSIconAdViewListener(iconAdViewListener);
 
 iconAdViewListener = new ADVSIconAdViewListener() {
