@@ -381,6 +381,7 @@ Media Id の取得に加えて、事前に広告枠の登録を行います。�
 - [広告フォーマット](#利用可能な簡易版インストリーム広告フォーマット)
 - 広告案件数
 - 広告位置配列
+- HTML （WebView フォーマットを使用する場合のみ）
 
 本物の案件とリンクしているため、下記案件数を下回る場合があります。
 その際は、担当者までご連絡ください。
@@ -503,7 +504,7 @@ public void loadMore()
 
 ##利用可能な簡易版インストリーム広告フォーマット
 
-- 1-1) ThumnailMiddle http://gyazo.com/b27e24c3244347525bbca4783d5a0970
+- 1-1) ThumnailMiddle
 
 ```
 	// The format looks like this
@@ -516,7 +517,7 @@ public void loadMore()
     //  -----------------------------------------------------
 ```
              
-- 1-2) ThumnailSmall http://gyazo.com/f4a78c66c40a4752b57a38cf60db4691
+- 1-2) ThumnailSmall
 
 ```
 	// The format looks like this
@@ -529,7 +530,7 @@ public void loadMore()
     //  -----------------------------------------------------
 ```
 
-- 1-3) LandscapePhoto http://gyazo.com/d07772c4afd601d763f293bece48f96d
+- 1-3) LandscapePhoto
 
 ```
 	// The format looks like this
@@ -545,7 +546,7 @@ public void loadMore()
     //  -----------------------------------------------------
 ```
 
-- 1-4) PhotoBottom http://gyazo.com/db8431011e76cb51cd5bd2d4613cd7ba
+- 1-4) PhotoBottom
 
 ```
 	// The format looks like this
@@ -561,7 +562,7 @@ public void loadMore()
     //  -----------------------------------------------------
 ```
 
-- 1-5) PhotoMiddle http://gyazo.com/298c181b787da26ee1ea934f0590d7d8
+- 1-5) PhotoMiddle
 
 ```
 	// The format looks like this
@@ -580,7 +581,7 @@ public void loadMore()
     //  -----------------------------------------------------
 ```
 
-- 1-6) TextOnly http://gyazo.com/6de1c6e1bf4d0ddd1b3f786bf8d1f457
+- 1-6) TextOnly
 
 ```
 	// The format looks like this
@@ -592,6 +593,10 @@ public void loadMore()
     // |                                                     |
     //  -----------------------------------------------------
 ```
+
+- 1-7) WebView
+
+HTML を入稿することで、アプリ内 WebView 上で描画することが出来ます。 
 
 #カスタムインストリーム広告
 
