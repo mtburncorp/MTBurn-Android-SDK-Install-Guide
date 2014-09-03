@@ -41,7 +41,7 @@ doc/index.html をお使いのブラウザで閲覧ください。
 
 AndroidManifest.xmlに
 
-```
+```Java
 <!-- 必要なパーミッション -->
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -76,7 +76,7 @@ AndroidManifest.xmlに
 
 ##コード内初期化
 
-```
+```Java
 import com.mtburn.android.sdk.AppDavis;
 ...
 public class MyActivity extends Activity {
@@ -91,7 +91,7 @@ AppDavis.init(this, "YOUR_MEDIA_ID");
 ## ウォール広告の表示
 ウォール広告を表示するためにAndroidManifest.xmlのapplicationタグ内に以下activityを記述してください。
 
-```
+```XML
 <activity
 	android:name="com.mtburn.android.sdk.wall.WallAdActivity"
 	android:label="@string/app_name" >
@@ -100,7 +100,7 @@ AppDavis.init(this, "YOUR_MEDIA_ID");
 
 以下の様に実装してウォール広告を表示します。
 
-```
+```Java
 //(1) 必要なパッケージをインポート
 import com.mtburn.android.sdk.AppDavis;
 import com.mtburn.android.sdk.wall.ADVSWallAdLoader;
@@ -133,7 +133,7 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 
 イベントを受信する事が出来ます。
 
-```
+```Java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 	...
@@ -162,7 +162,7 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 
 アイコン広告を表示するために必要な IconAdView を生成しレイアウトに追加します。
 
-```
+```XML
 <!-- xmlで定義する場合 -->
 <com.mtburn.android.sdk.icon.IconAdView
         android:id="@+id/iconAd1"
@@ -174,7 +174,7 @@ ADVSIconAdLoader がアイコン広告の情報をロードするクラス、Ico
 
 以下のように実装してアイコン広告を表示します。
 
-```
+```Java
 //(1) 必要なパッケージをインポート
 import com.mtburn.android.sdk.icon.ADVSIconAdLoader;
 import com.mtburn.android.sdk.icon.ADVSIconAdView;
@@ -231,7 +231,7 @@ public class MyActivity extends Activity {
 
 ADVSIconAdView に ADVSIconAdViewListener をそれぞれセットします。
 
-```
+```Java
 ADVSIconAdLoader iconAdLoader;
 ADVSIconAdLoadListener iconAdLoadListener;
 ADVSIconAdView iconAdView;
@@ -277,7 +277,6 @@ iconAdViewListener = new ADVSIconAdViewListener() {
 	public void iconAdLoaderDidClickIconAdView() {
 	}
 }
-
 ```
 
 ## アイコン広告のリフレッシュ時間の調整
@@ -290,8 +289,7 @@ iconAdViewListener = new ADVSIconAdViewListener() {
 
 それ以外の時間を設定しようとした場合は無視されますので注意して下さい。
 
-```
-
+```Java
 ADVSIconAdLoader iconAdLoader;
 
 @Override
@@ -300,14 +298,13 @@ protected void onCreate(Bundle savedInstanceState) {
 	
 	iconAdLoader.setRefreshInterval(60.0f);
 }
-
 ```
 
 ## アイコン広告のリフレッシュ停止
 
 デフォルトでは自動的にリフレッシュされますので、リフレッシュされたくない場合は以下のように設定してください。
 
-```
+```Java
 ADVSIconAdLoader iconAdLoader;
 
 @Override
@@ -354,7 +351,7 @@ setTextColor(int color), setTextColor(ColorStateList colors) | 文字色(RGB16�
 
 実装例
 
-```
+```XML
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.example.usemtburn_android_sdk"
     xmlns:tools="http://schemas.android.com/tools"
@@ -467,7 +464,7 @@ ListView と ArrayAdapter を用いた、ビューコンポーネントを使っ
 
 ADVSInstreamAdAdapter を用いて以下の様に実装し、インストリーム広告を表示します。
 
-```
+```Java
 // (1) 必要なパッケージをインポート
 import com.mtburn.android.sdk.AppDavis;
 import com.mtburn.android.sdk.instream.ADVSInstreamAdAdapter;
@@ -514,7 +511,7 @@ public class MyActivity extends Activity {
 
 その場合は ADVSInstreamAdAdapter に ADVSInstreamAdLoadListener をセットします。
 
-```
+```Java
 ADVSInstreamAdAdapter adapter;
 ADVSInstreamAdLoadListener listener;
 
@@ -565,7 +562,7 @@ listener = new ADVSInstreamAdLoadListener() {
 
 ユーザーがサイト下部に到達した際に追加フィードを読み込むような UI の場合に、追加で広告ロードを行うことも可能です。
 
-```
+```Java
 public void loadMore() 
 {
 	// 追加の広告をロードして、広告位置配列をもとにテーブル内の適切な位置に挿入します
@@ -677,7 +674,7 @@ HTML を入稿することで、アプリ内 WebView 上で描画することが
 
 ADVSInstreamAdPlacer を用いて以下の様に実装し、インストリーム広告を表示します。
 
-```
+```Java
 // (1) 必要なパッケージをインポート
 import com.mtburn.android.sdk.AppDavis;
 import com.mtburn.android.sdk.instream.ADVSInstreamAdPlacer;
@@ -737,7 +734,7 @@ public class MyActivity extends Activity {
 
 その場合は ADVSInstreamAdPlacer に ADVSInstreamAdPlacerListener をセットします。
 
-```
+```Java
 ADVSInstreamAdPlacer adPlacer;
 ADVSInstreamAdPlacerListener listener;
 
@@ -780,7 +777,7 @@ ADVSInstreamAdPlacer を用いて以下の様に実装し、インストリー�
 
 ここでは、BaseAdapter 内での利用例を示していますが、これに限るものではありません。
 
-```
+```Java
 private class CustomInstreamSampleAdapter extends BaseAdapter {
         ...
         @Override
