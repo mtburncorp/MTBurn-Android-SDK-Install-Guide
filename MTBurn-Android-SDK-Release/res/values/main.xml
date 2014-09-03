@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="appdavis_app_name">MTBurn-Android-SDK</string>
+    
+    <string name="appdavis_instream_ad_image_desc">This is an advertisement image</string>
+    <string name="appdavis_instream_ad_title">Advertiser (up to 25 characters)</string>
+    <string name="appdavis_instream_ad_sponsored">広告</string>
+    <string name="appdavis_instream_ad_desc">Sample ad text - appdavis_instream will dynamically select which ad text to use by measuring the size of the TextView.</string>
+
+    <item name="appdavis_instream_ad_image" type="id"/>
+    <item name="appdavis_instream_ad_indicator" type="id"/>
+    <item name="appdavis_instream_ad_text" type="id"/>
+    <item name="appdavis_instream_advertiser_icon" type="id"/>
+    <item name="appdavis_instream_advertiser_icon_indicator" type="id"/>
+    <item name="appdavis_instream_advertiser_name" type="id"/>
+    
+    <color name="gray">#BEBEBE</color>
+    
+</resources>

@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.usemtburn_android_sdk"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IconAdSampleActivity" >
+
+    <com.mtburn.android.sdk.icon.IconAdView
+        android:id="@+id/iconAd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <com.mtburn.android.sdk.icon.IconAdView
+        android:id="@+id/iconAd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/icon_ad_view_background"
+        app:imageWidth="@dimen/icon_ad_view_image_width"
+        app:imageHeight="@dimen/icon_ad_view_image_height"
+        app:titlePadding="@dimen/icon_ad_view_title_padding"
+        app:contentWidth="@dimen/icon_ad_view_content_width"
+        app:contentHeight="@dimen/icon_ad_view_content_height"
+        android:textColor="@color/icon_ad_view_text" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/icon_ad_view_layout_background"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <com.mtburn.android.sdk.icon.IconAdView
+            android:id="@+id/iconAd3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mtburn.android.sdk.icon.IconAdView
+            android:id="@+id/iconAd4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mtburn.android.sdk.icon.IconAdView
+            android:id="@+id/iconAd5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mtburn.android.sdk.icon.IconAdView
+            android:id="@+id/iconAd6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

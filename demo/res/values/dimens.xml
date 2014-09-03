@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- demo rss feed -->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="item1x1_left_image_width">156dp</dimen>
+    <dimen name="item1x1_left_image_height">111dp</dimen>
+    <dimen name="item1x1_right_image_width">140dp</dimen>
+    <dimen name="item1x1_right_image_height">130dp</dimen>
+    <dimen name="item1x1_left_text_size">12sp</dimen>
+    <dimen name="item1x1_right_text_size">12sp</dimen>
+    <dimen name="tab_size_width">80dp</dimen>
+    <dimen name="tab_size_height">40dp</dimen>
+    <dimen name="padding_item_top">10dp</dimen>
+    <dimen name="padding_item_bottom">10dp</dimen>
+    <dimen name="item_resource_text_size">8sp</dimen>
+    <!-- demo rss feed -->
+    
+    <!-- appdavis icon ad view attributes -->
+    <dimen name="icon_ad_view_image_width">70dp</dimen>
+    <dimen name="icon_ad_view_image_height">70dp</dimen>
+    <dimen name="icon_ad_view_title_padding">30dp</dimen>
+    <dimen name="icon_ad_view_content_width">150dp</dimen>
+    <dimen name="icon_ad_view_content_height">90dp</dimen>
+    <!-- appdavis icon ad view attributes -->
+    
+    <!-- appdavis custom instream ad -->
+    <dimen name="custom_instream_pb">4dp</dimen>
+    <dimen name="custom_instream_pl">5dp</dimen>
+    <dimen name="custom_instream_pr">5dp</dimen>
+    <dimen name="custom_instream_pt">4dp</dimen>
+    <dimen name="custom_instream_ll_mb">2dp</dimen>
+    <dimen name="custom_instream_icon_image_w">18dp</dimen>
+    <dimen name="custom_instream_icon_image_h">18dp</dimen>
+    <dimen name="custom_instream_icon_image_mr">4dp</dimen>
+    <dimen name="custom_instream_name_size">14sp</dimen>
+    <dimen name="custom_instream_sponsored_ml">2dp</dimen>
+    <dimen name="custom_instream_sponsored_mr">2dp</dimen>
+    <dimen name="custom_instream_sponsored_size">12sp</dimen>
+    <dimen name="custom_instream_desc_size">14sp</dimen>
+    <dimen name="custom_instream_main_image_w">90dp</dimen>
+    <dimen name="custom_instream_main_image_h">90dp</dimen>
+    <dimen name="custom_instream_main_image_mb">6dp</dimen>
+    <dimen name="custom_instream_main_image_mr">5dp</dimen>
+    <dimen name="custom_instream_main_image_mt">6dp</dimen>
+    <!-- appdavis custom instream ad -->
+    
+</resources>

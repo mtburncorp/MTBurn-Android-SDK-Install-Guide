@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <!-- appdavis icon ad view attributes -->
+  <declare-styleable name="IconAdView">
+    <attr name="imageWidth" format="dimension" />
+    <attr name="imageHeight" format="dimension" />
+    <attr name="titlePadding" format="dimension" />
+    <attr name="contentWidth" format="dimension" />
+    <attr name="contentHeight" format="dimension" />
+  </declare-styleable>
+  <!-- appdavis icon ad view attributes -->
+</resources>

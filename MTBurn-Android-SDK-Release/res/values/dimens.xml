@@ -1,0 +1,130 @@
+<resources>
+    
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    
+    <!-- appdavis icon ad view -->
+    <dimen name="appdavis_icon_device_zoom">1px</dimen>
+    <!-- appdavis icon ad view -->
+
+    <!-- appdavis instream internal ad view -->
+    
+    <!-- thumbnail middle -->
+    <dimen name="appdavis_instream_th_m_ll_pb">4dp</dimen>
+    <dimen name="appdavis_instream_th_m_ll_pl">5dp</dimen>
+    <dimen name="appdavis_instream_th_m_ll_pr">5dp</dimen>
+    <dimen name="appdavis_instream_th_m_ll_pt">4dp</dimen>
+    <dimen name="appdavis_instream_th_m_main_image_w">90dp</dimen>
+    <dimen name="appdavis_instream_th_m_main_image_h">90dp</dimen>
+    <dimen name="appdavis_instream_th_m_main_image_mb">6dp</dimen>
+    <dimen name="appdavis_instream_th_m_main_image_mr">5dp</dimen>
+    <dimen name="appdavis_instream_th_m_main_image_mt">6dp</dimen>
+    <dimen name="appdavis_instream_th_m_ll2_mb">2dp</dimen>
+    <dimen name="appdavis_instream_th_m_icon_image_w">18dp</dimen>
+    <dimen name="appdavis_instream_th_m_icon_image_h">18dp</dimen>
+    <dimen name="appdavis_instream_th_m_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_th_m_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_th_m_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_th_m_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_th_m_desc_size">14sp</dimen>
+    <dimen name="appdavis_instream_th_m_name_size">14sp</dimen>
+    <!-- thumbnail middle -->
+    
+    <!-- thumbnail small -->
+    <dimen name="appdavis_instream_th_s_ll_pb">8dp</dimen>
+    <dimen name="appdavis_instream_th_s_ll_pl">5dp</dimen>
+    <dimen name="appdavis_instream_th_s_ll_pr">5dp</dimen>
+    <dimen name="appdavis_instream_th_s_ll_pt">8dp</dimen>
+    <dimen name="appdavis_instream_th_s_main_image_w">50dp</dimen>
+    <dimen name="appdavis_instream_th_s_main_image_h">50dp</dimen>
+    <dimen name="appdavis_instream_th_s_main_image_mr">5dp</dimen>
+    <dimen name="appdavis_instream_th_s_ll2_mb">2dp</dimen>
+    <dimen name="appdavis_instream_th_s_icon_image_w">18dp</dimen>
+    <dimen name="appdavis_instream_th_s_icon_image_h">18dp</dimen>
+    <dimen name="appdavis_instream_th_s_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_th_s_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_th_s_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_th_s_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_th_s_desc_size">11.5sp</dimen>
+    <dimen name="appdavis_instream_th_s_name_size">14sp</dimen>
+    <!-- thumbnail small -->
+    
+    <!-- landscape photo -->
+    <dimen name="appdavis_instream_ls_p_main_image_h">100dp</dimen>
+    <dimen name="appdavis_instream_ls_p_main_image_mr">5dp</dimen>
+    <dimen name="appdavis_instream_ls_p_main_image_mb">5dp</dimen>
+    <dimen name="appdavis_instream_ls_p_ll_mb">4dp</dimen>
+    <dimen name="appdavis_instream_ls_p_ll_ml">8dp</dimen>
+    <dimen name="appdavis_instream_ls_p_ll_mr">8dp</dimen>
+    <dimen name="appdavis_instream_ls_p_ll2_mb">2dp</dimen>
+    <dimen name="appdavis_instream_ls_p_icon_image_w">18dp</dimen>
+    <dimen name="appdavis_instream_ls_p_icon_image_h">18dp</dimen>
+    <dimen name="appdavis_instream_ls_p_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_ls_p_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_ls_p_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_ls_p_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_ls_p_desc_size">14sp</dimen>
+    <dimen name="appdavis_instream_ls_p_name_size">14sp</dimen>
+    <!-- landscape photo -->
+    
+    <!-- photo bottom -->
+    <dimen name="appdavis_instream_ph_b_ll_pt">4dp</dimen>
+    <dimen name="appdavis_instream_ph_b_ll_pb">4dp</dimen>
+    <dimen name="appdavis_instream_ph_b_ll2_ml">8dp</dimen>
+    <dimen name="appdavis_instream_ph_b_ll2_mr">8dp</dimen>
+    <dimen name="appdavis_instream_ph_b_main_image_h">160dp</dimen>
+    <dimen name="appdavis_instream_ph_b_main_image_mt">6dp</dimen>
+    <dimen name="appdavis_instream_ph_b_ll3_mb">2dp</dimen>
+    <dimen name="appdavis_instream_ph_b_icon_image_w">32dp</dimen>
+    <dimen name="appdavis_instream_ph_b_icon_image_h">32dp</dimen>
+    <dimen name="appdavis_instream_ph_b_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_ph_b_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_ph_b_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_ph_b_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_ph_b_desc_size">11.5sp</dimen>
+    <dimen name="appdavis_instream_ph_b_name_size">14sp</dimen>
+    <!-- photo bottom -->
+    
+    <!-- photo middle -->
+    <dimen name="appdavis_instream_ph_m_ll_pb">4dp</dimen>
+    <dimen name="appdavis_instream_ph_m_ll_pl">6dp</dimen>
+    <dimen name="appdavis_instream_ph_m_ll_pr">6dp</dimen>
+    <dimen name="appdavis_instream_ph_m_ll_pt">4dp</dimen>
+    <dimen name="appdavis_instream_ph_m_main_image_h">160dp</dimen>
+    <dimen name="appdavis_instream_ph_m_main_image_mb">4dp</dimen>
+    <dimen name="appdavis_instream_ph_m_main_image_mt">4dp</dimen>
+    <dimen name="appdavis_instream_ph_m_icon_image_w">18dp</dimen>
+    <dimen name="appdavis_instream_ph_m_icon_image_h">18dp</dimen>
+    <dimen name="appdavis_instream_ph_m_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_ph_m_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_ph_m_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_ph_m_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_ph_m_desc_size">14sp</dimen>
+    <dimen name="appdavis_instream_ph_m_name_size">14sp</dimen>
+    <!-- photo middle -->
+    
+    <!-- text only -->
+    <dimen name="appdavis_instream_txt_ll_pb">4dp</dimen>
+    <dimen name="appdavis_instream_txt_ll_pl">5dp</dimen>
+    <dimen name="appdavis_instream_txt_ll_pr">5dp</dimen>
+    <dimen name="appdavis_instream_txt_ll_pt">4dp</dimen>
+    <dimen name="appdavis_instream_txt_main_image_w">30dp</dimen>
+    <dimen name="appdavis_instream_txt_main_image_h">30dp</dimen>
+    <dimen name="appdavis_instream_txt_main_image_mr">5dp</dimen>
+    <dimen name="appdavis_instream_ph_b_ll2_mb">2dp</dimen>
+    <dimen name="appdavis_instream_txt_icon_image_w">18dp</dimen>
+    <dimen name="appdavis_instream_txt_icon_image_h">18dp</dimen>
+    <dimen name="appdavis_instream_txt_icon_image_mr">4dp</dimen>
+    <dimen name="appdavis_instream_txt_sponsored_ml">2dp</dimen>
+    <dimen name="appdavis_instream_txt_sponsored_mr">2dp</dimen>
+    <dimen name="appdavis_instream_txt_sponsored_size">12sp</dimen>
+    <dimen name="appdavis_instream_txt_desc_size">11.5sp</dimen>
+    <dimen name="appdavis_instream_txt_name_size">14sp</dimen>
+    <!-- text only -->
+    
+    <!-- webview -->
+    <dimen name="appdavis_instream_web_js_document_body_style_zoom">1px</dimen>
+    <!-- webview -->
+    
+    <!-- appdavis instream internal ad view -->
+    
+</resources>

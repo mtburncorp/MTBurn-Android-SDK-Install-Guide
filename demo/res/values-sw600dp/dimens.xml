@@ -1,0 +1,49 @@
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    -->
+    
+    <!-- demo rss feed -->
+    <dimen name="item1x1_left_image_width">312dp</dimen>
+    <dimen name="item1x1_left_image_height">222dp</dimen>
+    <dimen name="item1x1_right_image_width">280dp</dimen>
+    <dimen name="item1x1_right_image_height">260dp</dimen>
+    <dimen name="item1x1_left_text_size">20sp</dimen>
+    <dimen name="item1x1_right_text_size">20sp</dimen>
+    <dimen name="tab_size_width">130dp</dimen>
+    <dimen name="tab_size_height">80dp</dimen>
+    <dimen name="item_resource_text_size">15sp</dimen>
+    <!-- demo rss feed -->
+    
+    <!-- appdavis icon ad view attributes -->
+    <dimen name="icon_ad_view_image_width">70dp</dimen>
+    <dimen name="icon_ad_view_image_height">70dp</dimen>
+    <dimen name="icon_ad_view_title_padding">30dp</dimen>
+    <dimen name="icon_ad_view_content_width">250dp</dimen>
+    <dimen name="icon_ad_view_content_height">90dp</dimen>
+    <!-- appdavis icon ad view attributes -->
+    
+    <!-- appdavis custom instream ad -->
+    <dimen name="custom_instream_pb">8dp</dimen>
+    <dimen name="custom_instream_pl">10dp</dimen>
+    <dimen name="custom_instream_pr">10dp</dimen>
+    <dimen name="custom_instream_pt">8dp</dimen>
+    <dimen name="custom_instream_ll_mb">4dp</dimen>
+    <dimen name="custom_instream_icon_image_w">36dp</dimen>
+    <dimen name="custom_instream_icon_image_h">36dp</dimen>
+    <dimen name="custom_instream_icon_image_mr">8dp</dimen>
+    <dimen name="custom_instream_name_size">22sp</dimen>
+    <dimen name="custom_instream_sponsored_ml">4dp</dimen>
+    <dimen name="custom_instream_sponsored_mr">4dp</dimen>
+    <dimen name="custom_instream_sponsored_size">20sp</dimen>
+    <dimen name="custom_instream_desc_size">21sp</dimen>
+    <dimen name="custom_instream_main_image_w">120dp</dimen>
+    <dimen name="custom_instream_main_image_h">120dp</dimen>
+    <dimen name="custom_instream_main_image_mb">12dp</dimen>
+    <dimen name="custom_instream_main_image_mr">10dp</dimen>
+    <dimen name="custom_instream_main_image_mt">12dp</dimen>
+    <!-- appdavis custom instream ad -->
+
+</resources>
