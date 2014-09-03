@@ -17,17 +17,19 @@
 
 #MTBurn-Android-SDKをダウンロード
 
-以下の URL から MTBurn-Android-SDK-Release をダウンロードします。
+以下の URL から AppDavis Android SDK をダウンロードします。最新のバージョンを選択することを推奨します。
 
-| 更新日時 | バージョン | リンク | 変更点 |
-| --- | --- | --- | --- |
-| 20140901 | v1.0.7 |  [ダウンロード]() | - | 
+[AppDavis Android SDK をダウンロード](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases)
 
-ダウンロードが完了したら、取得した zip ファイルを解凍して以下の MTBurn-Android-SDK ライブラリを確認して下さい。
+ダウンロードが完了したら、取得した zip ファイルを解凍して SDK ライブラリを確認して下さい。
 
 ```
 MTBurn-Android-SDK-Release
 ```
+
+また、デモアプリを試す場合は、demo ディレクトリを import してください。
+
+下記の説明に沿ってMTBurn-Android-SDKライブラリとGooglePlayServicerライブラリを追加することで SDK の各種機能を確認することが出来ます。
 
 #MTBurn-Android-SDKライブラリの追加
 

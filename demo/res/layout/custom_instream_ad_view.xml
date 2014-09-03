@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/custom_instream_pb"
+    android:paddingLeft="@dimen/custom_instream_pl"
+    android:paddingRight="@dimen/custom_instream_pr"
+    android:paddingTop="@dimen/custom_instream_pt" >
+
+    <!-- ad frame -->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <!-- header -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/custom_instream_ll_mb"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <!-- icon -->
+
+            <ImageView
+                android:id="@+id/custom_instream_advertiser_icon"
+                android:layout_width="@dimen/custom_instream_icon_image_w"
+                android:layout_height="@dimen/custom_instream_icon_image_h"
+                android:layout_marginRight="@dimen/custom_instream_icon_image_mr"
+                android:contentDescription="@string/custom_instream_ad_image_desc"
+                android:src="@drawable/placeholder" />
+
+            <!-- name -->
+
+            <TextView
+                android:id="@+id/custom_instream_advertiser_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="@string/custom_instream_ad_title"
+                android:textColor="#ff0099cc"
+                android:textSize="@dimen/custom_instream_name_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/custom_instream_sponsored_ml"
+                android:layout_marginRight="@dimen/custom_instream_sponsored_mr"
+                android:singleLine="true"
+                android:text="@string/custom_instream_ad_sponsored"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/custom_instream_sponsored_size" />
+        </LinearLayout>
+
+        <!-- ad text -->
+
+        <TextView
+            android:id="@+id/custom_instream_ad_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:text="@string/custom_instream_ad_desc"
+            android:textSize="@dimen/custom_instream_desc_size" />
+    </LinearLayout>
+
+    <!-- image -->
+
+    <ImageView
+        android:id="@+id/custom_instream_ad_image"
+        android:layout_width="@dimen/custom_instream_main_image_w"
+        android:layout_height="@dimen/custom_instream_main_image_h"
+        android:layout_marginBottom="@dimen/custom_instream_main_image_mb"
+        android:layout_marginRight="@dimen/custom_instream_main_image_mr"
+        android:layout_marginTop="@dimen/custom_instream_main_image_mt"
+        android:contentDescription="@string/custom_instream_ad_image_desc"
+        android:src="@drawable/placeholder" />
+
+</LinearLayout>
