@@ -2,7 +2,6 @@ package com.example.usemtburn_android_sdk;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.mtburn.android.sdk.AppDavis;
 import com.mtburn.android.sdk.appimp.ADVSAppImpLoadListener;
@@ -23,7 +22,7 @@ public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadList
         setContentView(R.layout.activity_icon_ad_sample);
 
         // init
-        AppDavis.init(this, getString(R.integer.media_id));
+        AppDavis.init(this.getApplicationContext(), getString(R.integer.media_id));
 
         // notify
         appImpLoader = AppDavis.createAppImpLoader(getApplicationContext());
@@ -62,17 +61,17 @@ public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadList
      */
     @Override
     public void iconAdLoaderDisStartLoadingAd() {
-        Log.d("ADVSIconAdLoadListener", "iconAdLoaderDidStartLoadingAd");
+        App.logd("iconAdLoaderDidStartLoadingAd");
     }
 
     @Override
     public void iconAdLoaderDidFinishLoadingAd() {
-        Log.d("ADVSIconAdLoadListener", "iconAdLoaderDidFinishLoadingAd");
+        App.logd("iconAdLoaderDidFinishLoadingAd");
     }
 
     @Override
     public void iconAdLoaderDidFailToLoadAdError(String errorString) {
-        Log.d("ADVSIconAdLoadListener", "iconAdLoaderDidFailToLoadAdError:" + errorString);
+        App.logd("iconAdLoaderDidFailToLoadAdError:" + errorString);
     }
 
     /*
@@ -80,17 +79,17 @@ public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadList
      */
     @Override
     public void iconAdLoaderDidReceiveIconAdView() {
-        Log.d("ADVSIconAdViewListener", "didReceiveIconAdView");
+        App.logd("didReceiveIconAdView");
     }
 
     @Override
     public void iconAdLoaderDidFailedToReceiveIconViewError(String erroString) {
-        Log.d("ADVSIconAdViewListener", "didFailedToReceiveIconView:" + erroString);
+        App.logd("didFailedToReceiveIconView:" + erroString);
     }
 
     @Override
     public void iconAdLoaderDidClickIconAdView() {
-        Log.d("ADVSIconAdViewListener", "didClickIconAdView");
+        App.logd("didClickIconAdView");
     }
 
     /*
@@ -98,11 +97,11 @@ public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadList
      */
     @Override
     public void appImpLoaderDidFinishNotifyingApp() {
-        Log.d("ADVSAppImpLoadListener", "appImpLoaderDidFinishNotifyingApp");
+        App.logd("appImpLoaderDidFinishNotifyingApp");
     }
 
     @Override
     public void appImpLoaderDidFailToNotifyingAppError(String errorString) {
-        Log.d("ADVSAppImpLoadListener", "appImpLoaderDidFailToNotifyingAppError:" + errorString);
+        App.logd("appImpLoaderDidFailToNotifyingAppError:" + errorString);
     }
 }

@@ -2,7 +2,6 @@ package com.example.usemtburn_android_sdk;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.mtburn.android.sdk.AppDavis;
@@ -23,7 +22,7 @@ public class WallAdSampleActivity extends Activity implements ADVSWallAdLoadList
         setContentView(R.layout.activity_wall_ad_sample);
 
         // init
-        AppDavis.init(this, getString(R.integer.media_id));
+        AppDavis.init(this.getApplicationContext(), getString(R.integer.media_id));
 
         // notify
         appImpLoader = AppDavis.createAppImpLoader(getApplicationContext());
@@ -52,12 +51,12 @@ public class WallAdSampleActivity extends Activity implements ADVSWallAdLoadList
      */
     @Override
     public void wallAdLoaderWillPresentWallAd() {
-        Log.d("ADVSWallAdLoadListener", "wallAdLoaderWillPresentWallAd");
+        App.logd("wallAdLoaderWillPresentWallAd");
     }
 
     @Override
     public void wallAdLoaderDidFailToLoadAdError(String errorString) {
-        Log.d("ADVSWallAdLoadListener", "wallAdLoaderDidFailToLoadAdError:" + errorString);
+        App.logd("wallAdLoaderDidFailToLoadAdError:" + errorString);
     }
 
     /*
@@ -65,11 +64,11 @@ public class WallAdSampleActivity extends Activity implements ADVSWallAdLoadList
      */
     @Override
     public void appImpLoaderDidFinishNotifyingApp() {
-        Log.d("ADVSAppImpLoadListener", "appImpLoaderDidFinishNotifyingApp");
+        App.logd("appImpLoaderDidFinishNotifyingApp");
     }
 
     @Override
     public void appImpLoaderDidFailToNotifyingAppError(String errorString) {
-        Log.d("ADVSAppImpLoadListener", "appImpLoaderDidFailToNotifyingAppError:" + errorString);
+        App.logd("appImpLoaderDidFailToNotifyingAppError:" + errorString);
     }
 }
