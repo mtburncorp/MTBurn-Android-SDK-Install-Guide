@@ -695,27 +695,52 @@ public class MyActivity extends Activity {
      	adPlacer = AppDavis.createInstreamAdPlacer(getActivity().getApplicationContext(), "YOUR_ADSPOT_ID");
 
      	// (5) 任意の View に広告案件情報を割り当てる（下記、カスタムインストリーム広告の表示に用いるパラメーターの項を参照）
-     	InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity()){
+     	InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity().getApplicationContext()){
+            @Override
+            public View createView(ViewGroup parent, int layoutId)
+            {
+                View view = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.custom_instream_ad_view, parent, false);
+                AdViewHolder holder = new AdViewHolder(view);
+                view.setTag(holder);
+                return view;
+            }
+            
             @Override
             public void bindAdData(View v, ADVSInstreamInfoModel adData) {
-                TextView advertiserName = (TextView) v.findViewById(R.id.custom_instream_advertiser_name);
-                advertiserName.setText(adData.title());
+                AdViewHolder holder = (AdViewHolder)v.getTag();
+                holder.setData(adData);
                 
-                TextView adText = (TextView) v.findViewById(R.id.custom_instream_ad_text);
-                adText.setText(adData.content());
-                
-                ImageView adImage = (ImageView) v.findViewById(R.id.custom_instream_ad_image);
-                loadAdImage(adData, adImage, null);
-                
-                ImageView iconImage = (ImageView) v.findViewById(R.id.custom_instream_advertiser_icon);
-                loadAdIconImage(adData, iconImage, null);
+                loadAdImage(adData, holder.adImage, null);
+                loadAdIconImage(adData, holder.iconImage, null);
             }
-     	};
-     	adPlacer.registerAdViewBinder(adViewBinder);
+        };
+        adPlacer.registerAdViewBinder(adViewBinder);
    }
 
    // (6) インストリーム広告のロードを開始する
    adPlacer.loadAd();
+   
+   ...
+   
+   // (7) パフォーマンスを出すためには [ViewHolder pattern](http://developer.android.com/training/improving-layouts/smooth-scrolling.html) を使ってください
+   static class AdViewHolder {
+        TextView advertiserName;
+        TextView adText;
+        ImageView adImage;
+        ImageView iconImage;
+        
+        public AdViewHolder(View convertView) {
+            advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
+            adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
+            adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
+            iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+        }
+        
+        void setData(ADVSInstreamInfoModel adData) {
+            advertiserName.setText(adData.title());
+            adText.setText(adData.content());
+        }
+    }
 }
 ```
 
@@ -781,36 +806,57 @@ ADVSInstreamAdPlacer を用いて以下の様に実装し、インストリー�
 private class CustomInstreamSampleAdapter extends BaseAdapter {
         ...
         @Override
+        public int getCount() {
+            return dataSourceList.size();
+        }
+
+        @Override
         public Object getItem(int position) {
             return dataSourceList.get(position);
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            Object obj = getItem(position);
-            if (obj instanceof ADVSInstreamInfoModel) {
-                if (null == convertView || !TAG_ADVIEW.equals(convertView.getTag())) {
-                    LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    convertView = inflater.inflate(R.layout.custom_instream_ad_view, parent, false);
-                    convertView.setTag(TAG_ADVIEW);
-                }
+        public long getItemId(int position) {
+            return position;
+        }
+        
+        @Override
+        public int getViewTypeCount() {
+            // (1) 広告案件の表示形式をサポートする
+            return 2;
+        }
 
-                // (1) インストリーム広告の View を取り出す
+        @Override
+        public int getItemViewType(int position) {
+            // (1) に同じ
+            return isAd(position) ? 0 : 1;
+        }
+        
+        private boolean isAd(int position) {
+            // (1) に同じ
+            return (getItem(position) instanceof ADVSInstreamInfoModel) ? true : false;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (isAd(position)) {
+                // (2) 広告案件を表現するカスタム View を取り出して表示する
                 convertView = adPlacer.placeAd((ADVSInstreamInfoModel) getItem(position), convertView, parent);
             } else {
+                // コンテンツ View を表示する
                 if (null == convertView || !TAG_DEFAULT.equals(convertView.getTag())) {
                     LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     convertView = inflater.inflate(android.R.layout.simple_expandable_list_item_1, parent,false);
                     convertView.setTag(TAG_DEFAULT);
                 }
                 TextView textView = (TextView)convertView.findViewById(android.R.id.text1);
-                textView.setText((String)obj);
+                textView.setText((String)getItem(position));
             }
             return convertView;
         }
 }
 ...
-// (2) インストリーム広告の情報を取得する
+// (3) インストリーム広告の情報を取得する
 @Override
 public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
    for (ADVSInstreamInfoModel adData : items) {
