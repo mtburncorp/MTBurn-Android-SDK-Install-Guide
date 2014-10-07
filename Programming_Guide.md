@@ -81,7 +81,7 @@ import com.mtburn.android.sdk.AppDavis;
 ...
 public class MyActivity extends Activity {
 ...
-AppDavis.init(this, "YOUR_MEDIA_ID");
+AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
 ...
 }
 ```
@@ -111,8 +111,8 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 		super.onCreate(savedInstanceState);
 
 		//(2) ウォール広告の初期化処理
-		AppDavis.init(this, "YOUR_MEDIA_ID");
-		ADVSWallAdLoader wallAdLoader = AppDavis.createWallAdLoader(this);
+		AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
+		ADVSWallAdLoader wallAdLoader = AppDavis.createWallAdLoader(this.getApplicationContext());
 
 		//(3)onClickイベントなど、表示させたい場所でshow(Activity)メソッドを呼ぶ
 		wallAdLoader.setOnClickListener(new View.OnClickListener() {
@@ -194,8 +194,8 @@ public class MyActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		// (3) ADVSIconAdLoaderを生成(Contextとmedia_idをコンストラクタで渡す)
-		AppDavis.init(this, "YOUR_MEDIA_ID");
-		iconAdLoader = AppDavis.createIconAdLoader(this);
+		AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
+		iconAdLoader = AppDavis.createIconAdLoader(this.getApplicationContext());
 	
 		// (4) アイコン広告ビューを生成
 		ADVSIconAdView iconAdView = (ADVSIconAdView) findViewById(R.id.iconAdView);
@@ -478,11 +478,11 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
      	...
      	// (3) AppDavis SDK の初期化
-     	AppDavis.init(this, "YOUR_MEDIA_ID");
-     	ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rowdata, data);
+     	AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
+     	ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.getApplicationContext(), R.layout.rowdata, data);
         
      	// (4) インストリーム広告を差し込みたい adapter と広告枠Id を設定
-     	advsAdapter = AppDavis.createInstreamAdAdapter(getActivity(), arrayAdapter, "YOUR_ADSPOT_ID");
+     	advsAdapter = AppDavis.createInstreamAdAdapter(this.getApplicationContext(), arrayAdapter, "YOUR_ADSPOT_ID");
      	...   
     }
 
@@ -689,10 +689,10 @@ public class MyActivity extends Activity {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
      	// (3) AppDavis SDK の初期化
-     	AppDavis.init(this, "YOUR_MEDIA_ID");
+     	AppDavis.init(getActivity().getApplicationContext(), "YOUR_MEDIA_ID");
 	
      	// (4) ADVSInstreamAdPlacer の生成
-     	adPlacer = AppDavis.createInstreamAdPlacer(getActivity(), "YOUR_ADSPOT_ID");
+     	adPlacer = AppDavis.createInstreamAdPlacer(getActivity().getApplicationContext(), "YOUR_ADSPOT_ID");
 
      	// (5) 任意の View に広告案件情報を割り当てる（下記、カスタムインストリーム広告の表示に用いるパラメーターの項を参照）
      	InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity()){
