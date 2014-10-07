@@ -27,6 +27,9 @@
 		* [カスタムインストリーム広告の表示時のイベント取得](#カスタムインストリーム広告の表示時のイベント取得)
 		* [カスタムインストリーム広告の表示](#カスタムインストリーム広告の表示)
 * [よくある質問](#よくある質問)
+	* [SDK のログ出力は抑制できますか？](#SDK のログ出力は抑制できますか？)
+	* [〇〇の機能はありますか？](#〇〇の機能はありますか？)
+	* [サンプルプロジェクトはありますか？](#サンプルプロジェクトはありますか？)
 * [更新履歴](#更新履歴)
 
 # まずはじめに
@@ -868,4 +871,21 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
 
 # よくある質問
 
+## SDK のログ出力は抑制できますか？
+
+次のコードを任意の場所に書いてください
+
+```Java
+AppDavis.setMuteLogOutput(true);
+```
+
+## 〇〇の機能はありますか？
+
+[javadoc](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/blob/master/MTBurn-Android-SDK-Release/doc/index.html) に public API が公開されています
+
+## サンプルプロジェクトはありますか？
+[demo](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo) を参考にしてください
+
 # 更新履歴
+
+[github releases](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases) をご確認ください
