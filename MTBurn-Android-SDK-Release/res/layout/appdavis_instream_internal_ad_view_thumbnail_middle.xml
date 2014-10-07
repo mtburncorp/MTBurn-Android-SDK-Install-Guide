@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/appdavis_instream_th_m_ll_pb"
     android:paddingLeft="@dimen/appdavis_instream_th_m_ll_pl"
     android:paddingRight="@dimen/appdavis_instream_th_m_ll_pr"
-    android:paddingTop="@dimen/appdavis_instream_th_m_ll_pr" >
+    android:paddingTop="@dimen/appdavis_instream_th_m_ll_pt" >
 
     <!-- image -->
 

@@ -7,6 +7,7 @@
     <string name="appdavis_instream_ad_title">Advertiser (up to 25 characters)</string>
     <string name="appdavis_instream_ad_sponsored">広告</string>
     <string name="appdavis_instream_ad_desc">Sample ad text - appdavis_instream will dynamically select which ad text to use by measuring the size of the TextView.</string>
+    <string name="appdavis_instream_ad_image_load_key">10000</string>
 
     <item name="appdavis_instream_ad_image" type="id"/>
     <item name="appdavis_instream_ad_indicator" type="id"/>

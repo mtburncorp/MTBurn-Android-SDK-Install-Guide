@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.usemtburn_android_sdk.App;
 import com.example.usemtburn_android_sdk.R;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,24 +54,27 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     
     // AppDavis SDK を初期化して、広告案件のロードを開始する
     private void setupSDK() {
-        AppDavis.init(getActivity(), getString(R.integer.media_id));
+        AppDavis.init(getActivity().getApplicationContext(), getString(R.integer.media_id));
         adPlacer = AppDavis.createInstreamAdPlacer(getActivity(), getAdSpotId());
     
         //　任意の View に広告案件情報を割り当てる
         InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity()){
             @Override
+            public View createView(ViewGroup parent, int layoutId)
+            {
+                View view = LayoutInflater.from(getActivity()).inflate(R.layout.custom_instream_ad_view, parent, false);
+                AdViewHolder holder = new AdViewHolder(view);
+                view.setTag(holder);
+                return view;
+            }
+            
+            @Override
             public void bindAdData(View v, ADVSInstreamInfoModel adData) {
-                TextView advertiserName = (TextView) v.findViewById(R.id.custom_instream_advertiser_name);
-                advertiserName.setText(adData.title());
+                AdViewHolder holder = (AdViewHolder)v.getTag();
+                holder.setData(adData);
                 
-                TextView adText = (TextView) v.findViewById(R.id.custom_instream_ad_text);
-                adText.setText(adData.content());
-                
-                ImageView adImage = (ImageView) v.findViewById(R.id.custom_instream_ad_image);
-                loadAdImage(adData, adImage, null);
-                
-                ImageView iconImage = (ImageView) v.findViewById(R.id.custom_instream_advertiser_icon);
-                loadAdIconImage(adData, iconImage, null);
+                loadAdImage(adData, holder.adImage, null);
+                loadAdIconImage(adData, holder.iconImage, null);
             }
         };
         adPlacer.registerAdViewBinder(adViewBinder);
@@ -84,7 +87,6 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     private class CustomInstreamSampleAdapter extends BaseAdapter {
         
         private static final String TAG_DEFAULT = "TAG_DEFAULT";
-        private static final String TAG_ADVIEW = "TAG_ADVIEW";
         private List<Object> dataSourceList = new ArrayList<Object>(
                 Arrays.asList(getResources().getStringArray(R.array.custom_instream_message_list))
         );
@@ -103,17 +105,25 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
         public long getItemId(int position) {
             return position;
         }
+        
+        @Override
+        public int getViewTypeCount() {
+            return 2;
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            return isAd(position) ? 0 : 1;
+        }
+        
+        private boolean isAd(int position) {
+            return (getItem(position) instanceof ADVSInstreamInfoModel) ? true : false;
+        }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Object obj = getItem(position);
-            if (obj instanceof ADVSInstreamInfoModel) {
+            if (isAd(position)) {
                 // 広告案件を表現するカスタム View を取り出して表示する
-                if (null == convertView || !TAG_ADVIEW.equals(convertView.getTag())) {
-                    LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    convertView = inflater.inflate(R.layout.custom_instream_ad_view, parent, false);
-                    convertView.setTag(TAG_ADVIEW);
-                }
                 convertView = adPlacer.placeAd((ADVSInstreamInfoModel) getItem(position), convertView, parent);
             } else {
                 // コンテンツ View を表示する
@@ -123,7 +133,7 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
                     convertView.setTag(TAG_DEFAULT);
                 }
                 TextView textView = (TextView)convertView.findViewById(android.R.id.text1);
-                textView.setText((String)obj);
+                textView.setText((String)getItem(position));
             }
             return convertView;
         }
@@ -132,7 +142,7 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     // AppDavis SDK から広告案件情報のロード進捗を伝えるためのコールバック群
     @Override
     public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
-        Log.d("", "onAdsLoaded");
+        App.logd("onAdsLoaded");
         
         for (ADVSInstreamInfoModel adData : items) {
             adapter.dataSourceList.add(3, adData);
@@ -141,23 +151,23 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     }
     @Override
     public void onAdMainImageLoaded(String imageUrl) {
-        Log.d("", "onAdMainImageLoaded:imageUrl=" + imageUrl);
+        App.logd("onAdMainImageLoaded:imageUrl=" + imageUrl);
     }
     @Override
     public void onAdIconImageLoaded(String imageUrl) {
-        Log.d("", "onAdIconImageLoaded:imageUrl=" + imageUrl);
+        App.logd("onAdIconImageLoaded:imageUrl=" + imageUrl);
     }
     @Override
     public void onAdsLoadedFail(String errorString) {
-        Log.d("", "onAdsLoadedFail:error=" + errorString);
+        App.logd("onAdsLoadedFail:error=" + errorString);
     }
     @Override
     public void onAdImageLoadedFail(String imageUrl, String errorString) {
-        Log.d("", "onAdImageLoadedFail:error" + errorString);
+        App.logd("onAdImageLoadedFail:error" + errorString);
     }
     @Override
     public void onAdClicked(String redirectURL) {
-        Log.d("", "onAdClicked:redirectURL" + redirectURL);
+        App.logd("onAdClicked:redirectURL" + redirectURL);
     }
     // --- ここまでで、コールバック群おわり
     
@@ -165,5 +175,24 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     private String getAdSpotId() {
         String name = "media_id_"+getString(R.integer.media_id)+"_adspot_custom";
         return getString(getResources().getIdentifier(name, "string", getActivity().getPackageName()));
+    }
+    
+    static class AdViewHolder {
+        TextView advertiserName;
+        TextView adText;
+        ImageView adImage;
+        ImageView iconImage;
+        
+        public AdViewHolder(View convertView) {
+            advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
+            adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
+            adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
+            iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+        }
+        
+        void setData(ADVSInstreamInfoModel adData) {
+            advertiserName.setText(adData.title());
+            adText.setText(adData.content());
+        }
     }
 }

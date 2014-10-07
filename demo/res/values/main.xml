@@ -83,15 +83,15 @@
         <item>#9b2766</item>
     </array>
     <string-array name="category_urls">
-        <item>http://sankei.jp.msn.com/rss/news/west_flash.xml</item>
-        <item>http://sankei.jp.msn.com/rss/news/entertainments.xml</item>
-        <item>http://sankei.jp.msn.com/rss/news/sports.xml</item>
-        <item>http://entabe.jp/news/feed.rss</item>
-        <item>http://sankei.jp.msn.com/rss/news/affairs.xml</item>
-        <item>http://sankei.jp.msn.com/rss/news/politics.xml</item>
-        <item>http://sankei.jp.msn.com/rss/news/economy.xml</item>
+        <item>http://rss.asahi.com/rss/asahi/newsheadlines.rdf</item>
+        <item>http://www3.asahi.com/rss/culture.rdf</item>
+        <item>http://www3.asahi.com/rss/sports.rdf</item>
+        <item>http://www3.asahi.com/rss/book.rdf</item>
+        <item>http://www3.asahi.com/rss/national.rdf</item>
+        <item>http://www3.asahi.com/rss/politics.rdf</item>
+        <item>http://www3.asahi.com/rss/business.rdf</item>
         <item>http://rss.rssad.jp/rss/itmatmarkit/rss.xml</item>
-        <item>http://sankei.jp.msn.com/rss/news/world.xml</item>
+        <item>http://www3.asahi.com/rss/international.rdf</item>
     </string-array>
     
     <color name="background_tab_pressed">#6633B5E5</color>

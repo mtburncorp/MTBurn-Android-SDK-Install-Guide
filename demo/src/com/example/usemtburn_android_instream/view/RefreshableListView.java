@@ -4,11 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.example.usemtburn_android_instream.RefreshableInterface;
+//import com.example.usemtburn_android_sdk.App;
 import com.example.usemtburn_android_sdk.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
-//import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -61,7 +61,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
     public void onScroll(AbsListView view, int firstVisibleItem,
             int visibleItemCount, int totalItemCount) {
         // TODO Auto-generated method stub
-        // Log.d("debug", "debug");
+        // App.logd("debug");
     }
 
     @Override
@@ -82,7 +82,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
             if (!isLoading) {
                 deltaY = ev.getY() - startY;
 
-                // Log.d("debug", String.valueOf(deltaY));
+                // App.logd(String.valueOf(deltaY));
 
                 headerRelativeLayout.setPadding(
                         headerRelativeLayout.getPaddingLeft(), -1
@@ -126,7 +126,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
                     //START LOADING
                     isLoading = true;
                     if (refreshDelegate != null) {
-                        refreshDelegate.startFresh();
+                        //refreshDelegate.startFresh();
                     }
                 }
             }

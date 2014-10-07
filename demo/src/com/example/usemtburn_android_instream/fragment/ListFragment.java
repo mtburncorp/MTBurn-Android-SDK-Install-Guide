@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +32,7 @@ import com.example.usemtburn_android_instream.RefreshableInterface;
 import com.example.usemtburn_android_instream.activity.ItemViewActivity;
 import com.example.usemtburn_android_instream.adapter.ItemAdapter;
 import com.example.usemtburn_android_instream.view.RefreshableListView;
+import com.example.usemtburn_android_sdk.App;
 import com.example.usemtburn_android_sdk.R;
 
 //-----------------------------------------------------------------------
@@ -84,7 +84,7 @@ public class ListFragment extends Fragment implements RefreshableInterface, ADVS
         
         // ADVSInstreamAdAdapter<ItemAdapter> の実装クラスを生成して、リスナーをセットする
         List<Integer> positionList = new ArrayList<Integer>(Arrays.asList(5,10,15,20,25));
-        advsAdapter = AppDavis.createInstreamAdAdapter(getActivity(), itemAdapter, getAdSpotId(tabPosition), 5, positionList);
+        advsAdapter = AppDavis.createInstreamAdAdapter(getActivity().getApplicationContext(), itemAdapter, getAdSpotId(tabPosition), 5, positionList);
         advsAdapter.setAdListener(this);
         
         this.startFresh();
@@ -300,37 +300,37 @@ public class ListFragment extends Fragment implements RefreshableInterface, ADVS
     @Override
     public void instreamAdLoaderDidStartLoadingAd()
     {
-        Log.d("ListFragment", "instreamAdLoaderDidStartLoadingAd:tabPosition=" + tabPosition);
+        App.logd("instreamAdLoaderDidStartLoadingAd:tabPosition=" + tabPosition);
     }
     @Override
     public void instreamAdLoaderDidFinishLoadingAds()
     {
-        Log.d("ListFragment", "instreamAdLoaderDidFinishLoadingAds:tabPosition=" + tabPosition);
+        App.logd("instreamAdLoaderDidFinishLoadingAds:tabPosition=" + tabPosition);
     }
     @Override
     public void instreamAdLoaderDidFinishLoadingMainImage(String imageUrl)
     {
-        Log.d("ListFragment", "instreamAdLoaderDidFinishLoadingMainImage:tabPosition=" + tabPosition + ":image=" + imageUrl);
+        App.logd("instreamAdLoaderDidFinishLoadingMainImage:tabPosition=" + tabPosition + ":image=" + imageUrl);
     }
     @Override
     public void instreamAdLoaderDidFinishLoadingIconImage(String imageUrl)
     {
-        Log.d("ListFragment", "instreamAdLoaderDidFinishLoadingIconImage:tabPosition=" + tabPosition + ":image=" + imageUrl);
+        App.logd("instreamAdLoaderDidFinishLoadingIconImage:tabPosition=" + tabPosition + ":image=" + imageUrl);
     }
     @Override
     public void instreamAdLoaderDidFailToLoadAdError(String errorString)
     {
-        Log.d("ListFragment", "instreamAdLoaderDidFailToLoadAdError:tabPosition=" + tabPosition + ":error=" + errorString);
+        App.logd("instreamAdLoaderDidFailToLoadAdError:tabPosition=" + tabPosition + ":error=" + errorString);
     }
     @Override
     public void instreamAdLoaderDidFailToLoadImageError(String errorString)
     {
-        Log.d("ListFragment", "instreamAdLoaderDidFailToLoadImageError:tabPosition=" + tabPosition + ":error=" + errorString);
+        App.logd("instreamAdLoaderDidFailToLoadImageError:tabPosition=" + tabPosition + ":error=" + errorString);
     }
     @Override
     public void instreamAdLoaderDidClick(String redirectUrl)
     {
-        Log.d("ListFragment", "instreamAdLoaderDidClick:tabPosition=" + tabPosition + ":redirectUrl=" + redirectUrl);
+        App.logd("instreamAdLoaderDidClick:tabPosition=" + tabPosition + ":redirectUrl=" + redirectUrl);
     }
     // --- ここまでで、コールバック群おわり
     
