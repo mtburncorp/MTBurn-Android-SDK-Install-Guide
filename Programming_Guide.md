@@ -1,6 +1,6 @@
 # 目次
 
-* [まずはじめに](#まずはじめに) 
+* [まずはじめに](#まずはじめに)
 	* [AndroidManifest.xml](#AndroidManifest.xml)
 	* [Media Id の取得](#Media Id の取得)
 	* [コード内初期化](#コード内初期化)
@@ -14,23 +14,24 @@
 	* [アイコン広告のリフレッシュ停止](#アイコン広告のリフレッシュ停止)
 	* [アイコン広告のリフレッシュ管理](#アイコン広告のリフレッシュ管理)
 	* [アイコン広告表示パラメータの設定](#アイコン広告表示パラメータの設定)
-* [インストリーム広告](#インストリーム広告)
+* [インフィード広告](#インフィード広告)
 	* [広告枠 Id の取得](#広告枠 Id の取得)
-	* [簡易版インストリーム広告](#簡易版インストリーム広告)
-		* [簡易版インストリーム広告の表示](#簡易版インストリーム広告の表示)
-		* [簡易版インストリーム広告の表示時のイベント取得](#簡易版インストリーム広告の表示時のイベント取得)
-		* [簡易版インストリーム広告の追加ロード](#簡易版インストリーム広告の追加ロード)
-		* [利用可能な簡易版インストリーム広告フォーマット](#利用可能な簡易版インストリーム広告フォーマット)
-	* [カスタムインストリーム広告](#カスタムインストリーム広告)
-		* [カスタムインストリーム広告のロード](#カスタムインストリーム広告のロード)
-		* [カスタムインストリーム広告の表示に用いるパラメーター](##カスタムインストリーム広告の表示に用いるパラメーター)
-		* [カスタムインストリーム広告の表示時のイベント取得](#カスタムインストリーム広告の表示時のイベント取得)
-		* [カスタムインストリーム広告の表示](#カスタムインストリーム広告の表示)
+	* [簡易版インフィード広告](#簡易版インフィード広告)
+		* [簡易版インフィード広告の表示](#簡易版インフィード広告の表示)
+		* [簡易版インフィード広告の表示時のイベント取得](#簡易版インフィード広告の表示時のイベント取得)
+		* [簡易版インフィード広告の追加ロード](#簡易版インフィード広告の追加ロード)
+		* [利用可能な簡易版インフィード広告フォーマット](#利用可能な簡易版インフィード広告フォーマット)
+	* [カスタムインフィード広告](#カスタムインフィード広告)
+		* [カスタムインフィード広告のロード](#カスタムインフィード広告のロード)
+		* [カスタムインフィード広告の表示に用いるパラメーター](##カスタムインフィード広告の表示に用いるパラメーター)
+		* [カスタムインフィード広告の表示時のイベント取得](#カスタムインフィード広告の表示時のイベント取得)
+		* [カスタムインフィード広告の表示](#カスタムインフィード広告の表示)
 * [よくある質問](#よくある質問)
 	* [SDK のログ出力は抑制できますか？](#SDK のログ出力は抑制できますか？)
 	* [〇〇の機能はありますか？](#〇〇の機能はありますか？)
 	* [サンプルプロジェクトはありますか？](#サンプルプロジェクトはありますか？)
 	* [バージョン番号はどういう意味がありますか？](#バージョン番号はどういう意味がありますか？)
+    * [コード中にあるInstreamはどういう意味ですか](#コード中にあるInstreamはどういう意味ですか)
 * [更新履歴](#更新履歴)
 
 # まずはじめに
@@ -187,8 +188,8 @@ public class MyActivity extends Activity {
 
 	// (2) ADVSIconAdLoaderの定義
 	ADVSIconAdLoader iconAdLoader;
-	
-	/** 
+
+	/**
 	 * ロードの処理はActivityの場合はonCreate内で、
 	 *　Fragmentの場合はonCreateView内でします。
 	 */
@@ -200,7 +201,7 @@ public class MyActivity extends Activity {
 		// (3) ADVSIconAdLoaderを生成(Contextとmedia_idをコンストラクタで渡す)
 		AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
 		iconAdLoader = AppDavis.createIconAdLoader(this.getApplicationContext());
-	
+
 		// (4) アイコン広告ビューを生成
 		ADVSIconAdView iconAdView = (ADVSIconAdView) findViewById(R.id.iconAdView);
 
@@ -299,7 +300,7 @@ ADVSIconAdLoader iconAdLoader;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	
+
 	iconAdLoader.setRefreshInterval(60.0f);
 }
 ```
@@ -331,7 +332,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ADVSIconAdView のパラメーターをコントロールすることで、アイコン広告の表示形式の調整が可能です。以下の項目が設定できます。
 
 - xml から設定可能な項目
- 
+
 パラメータ | 説明 | 型
 --- | ---- | ---
 app:contentWidth | 広告領域の横幅 (dp) | int
@@ -378,14 +379,14 @@ setTextColor(int color), setTextColor(ColorStateList colors) | 文字色(RGB16�
         android:textColor="@color/icon_ad_view_text" />
 ```
 
-#インストリーム広告
+#インフィード広告
 
 ##広告枠 Id の取得
 
 Media Id の取得に加えて、事前に広告枠の登録を行います。以下の情報を設定し、広告枠IDが払い出されます。
 
 - 広告枠名
-- [広告フォーマット](#利用可能な簡易版インストリーム広告フォーマット)
+- [広告フォーマット](#利用可能な簡易版インフィード広告フォーマット)
 - 広告案件数
 - 広告位置配列
 - HTML （WebView フォーマットを使用する場合のみ）
@@ -460,13 +461,13 @@ Media Id の取得に加えて、事前に広告枠の登録を行います。�
 
 **現在は、新規広告枠の登録設定については担当者へお問い合わせください。**
 
-##簡易版インストリーム広告
+##簡易版インフィード広告
 
 ListView と ArrayAdapter を用いた、ビューコンポーネントを使っている場合に簡易に実装が可能です。
 
-##簡易版インストリーム広告の表示
+##簡易版インフィード広告の表示
 
-ADVSInstreamAdAdapter を用いて以下の様に実装し、インストリーム広告を表示します。
+ADVSInstreamAdAdapter を用いて以下の様に実装し、インフィード広告を表示します。
 
 ```Java
 // (1) 必要なパッケージをインポート
@@ -484,10 +485,10 @@ public class MyActivity extends Activity {
      	// (3) AppDavis SDK の初期化
      	AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
      	ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.getApplicationContext(), R.layout.rowdata, data);
-        
-     	// (4) インストリーム広告を差し込みたい adapter と広告枠Id を設定
+
+     	// (4) インフィード広告を差し込みたい adapter と広告枠Id を設定
      	advsAdapter = AppDavis.createInstreamAdAdapter(this.getApplicationContext(), arrayAdapter, "YOUR_ADSPOT_ID");
-     	...   
+     	...
     }
 
     @Override
@@ -495,23 +496,23 @@ public class MyActivity extends Activity {
      	...
      	listView = (ListView) frameLayout.findViewById(R.id.listView);
 
-     	// (5) インストリーム広告を差し込みたい list view に adapter を設定
+     	// (5) インフィード広告を差し込みたい list view に adapter を設定
      	listView.setAdapter(advsAdapter);
      	...
     }
     ...
     // 媒体様のデータ取得完了を待って
     ...
-    // (6) インストリーム広告のロードを開始する
+    // (6) インフィード広告のロードを開始する
     advsAdapter.loadAd();
 }
 ```
 
 1リクエストあたりの広告案件数と広告位置配列は、`AppDavis のcreateInstreamAdAdapter(Context context, T originalAdapter, String adSpotId, int adCount, List<Integer>positions)`などのAPIを使ってコントロールすることも出来ます。
 
-##簡易版インストリーム広告の表示時のイベント取得
+##簡易版インフィード広告の表示時のイベント取得
 
-インストリーム広告を表示する際に、そのイベントを受け取りたい場合があります。
+インフィード広告を表示する際に、そのイベントを受け取りたい場合があります。
 
 その場合は ADVSInstreamAdAdapter に ADVSInstreamAdLoadListener をセットします。
 
@@ -562,19 +563,19 @@ listener = new ADVSInstreamAdLoadListener() {
 };
 ```
 
-##簡易版インストリーム広告の追加ロード
+##簡易版インフィード広告の追加ロード
 
 ユーザーがサイト下部に到達した際に追加フィードを読み込むような UI の場合に、追加で広告ロードを行うことも可能です。
 
 ```Java
-public void loadMore() 
+public void loadMore()
 {
 	// 追加の広告をロードして、広告位置配列をもとにテーブル内の適切な位置に挿入します
 	advsAdapter.loadAd();
 }
 ```
 
-##利用可能な簡易版インストリーム広告フォーマット
+##利用可能な簡易版インフィード広告フォーマット
 
 - 1-1) ThumnailMiddle
 
@@ -588,7 +589,7 @@ public void loadMore()
     // |             |                                       |
     //  -----------------------------------------------------
 ```
-             
+
 - 1-2) ThumnailSmall
 
 ```
@@ -649,7 +650,7 @@ public void loadMore()
     // |                                                     |
     // |                                                     |
     // | --------------------------------------------------- |
-    // |  text                                               |                                                     
+    // |  text                                               |
     //  -----------------------------------------------------
 ```
 
@@ -668,15 +669,15 @@ public void loadMore()
 
 - 1-7) WebView
 
-HTML を入稿することで、アプリ内 WebView 上で描画することが出来ます。 
+HTML を入稿することで、アプリ内 WebView 上で描画することが出来ます。
 
-#カスタムインストリーム広告
+#カスタムインフィード広告
 
-簡易版インストリーム広告よりも柔軟な表示を行いたい場合などに、カスタム型のインストリーム広告機能を利用することが出来ます。
+簡易版インフィード広告よりも柔軟な表示を行いたい場合などに、カスタム型のインフィード広告機能を利用することが出来ます。
 
-##カスタムインストリーム広告のロード
+##カスタムインフィード広告のロード
 
-ADVSInstreamAdPlacer を用いて以下の様に実装し、インストリーム広告を表示します。
+ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
 ```Java
 // (1) 必要なパッケージをインポート
@@ -694,11 +695,11 @@ public class MyActivity extends Activity {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
      	// (3) AppDavis SDK の初期化
      	AppDavis.init(getActivity().getApplicationContext(), "YOUR_MEDIA_ID");
-	
+
      	// (4) ADVSInstreamAdPlacer の生成
      	adPlacer = AppDavis.createInstreamAdPlacer(getActivity().getApplicationContext(), "YOUR_ADSPOT_ID");
 
-     	// (5) 任意の View に広告案件情報を割り当てる（下記、カスタムインストリーム広告の表示に用いるパラメーターの項を参照）
+     	// (5) 任意の View に広告案件情報を割り当てる（下記、カスタムインフィード広告の表示に用いるパラメーターの項を参照）
      	InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity().getApplicationContext()){
             @Override
             public View createView(ViewGroup parent, int layoutId)
@@ -708,12 +709,12 @@ public class MyActivity extends Activity {
                 view.setTag(holder);
                 return view;
             }
-            
+
             @Override
             public void bindAdData(View v, ADVSInstreamInfoModel adData) {
                 AdViewHolder holder = (AdViewHolder)v.getTag();
                 holder.setData(adData);
-                
+
                 loadAdImage(adData, holder.adImage, null);
                 loadAdIconImage(adData, holder.iconImage, null);
             }
@@ -721,25 +722,25 @@ public class MyActivity extends Activity {
         adPlacer.registerAdViewBinder(adViewBinder);
    }
 
-   // (6) インストリーム広告のロードを開始する
+   // (6) インフィード広告のロードを開始する
    adPlacer.loadAd();
-   
+
    ...
-   
+
    // (7) パフォーマンスを出すためには [ViewHolder pattern](http://developer.android.com/training/improving-layouts/smooth-scrolling.html) を使ってください
    static class AdViewHolder {
         TextView advertiserName;
         TextView adText;
         ImageView adImage;
         ImageView iconImage;
-        
+
         public AdViewHolder(View convertView) {
             advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
             adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
             adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
             iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
         }
-        
+
         void setData(ADVSInstreamInfoModel adData) {
             advertiserName.setText(adData.title());
             adText.setText(adData.content());
@@ -748,7 +749,7 @@ public class MyActivity extends Activity {
 }
 ```
 
-##カスタムインストリーム広告の表示に用いるパラメーター
+##カスタムインフィード広告の表示に用いるパラメーター
 
 | パラメータ名 | 説明 | 例 |
 | --- | --- | --- |
@@ -757,9 +758,9 @@ public class MyActivity extends Activity {
 | iconImage | アイコン型の正方形画像(114x114 pixel固定) | 下記メソッドを呼び出してください |
 | mainImage | バナー型の矩形画像など(広告枠IDごとにサイズ可変) | 下記メソッドを呼び出してください |
 
-##カスタムインストリーム広告の表示時のイベント取得
+##カスタムインフィード広告の表示時のイベント取得
 
-カスタムインストリーム広告を表示する際に、そのイベントを受け取りたい場合があります。
+カスタムインフィード広告を表示する際に、そのイベントを受け取りたい場合があります。
 
 その場合は ADVSInstreamAdPlacer に ADVSInstreamAdPlacerListener をセットします。
 
@@ -800,9 +801,9 @@ listener = new ADVSInstreamAdPlacerListener() {
 };
 ```
 
-##カスタムインストリーム広告の表示
+##カスタムインフィード広告の表示
 
-ADVSInstreamAdPlacer を用いて以下の様に実装し、インストリーム広告を表示します。
+ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
 ここでは、BaseAdapter 内での利用例を示していますが、これに限るものではありません。
 
@@ -823,7 +824,7 @@ private class CustomInstreamSampleAdapter extends BaseAdapter {
         public long getItemId(int position) {
             return position;
         }
-        
+
         @Override
         public int getViewTypeCount() {
             // (1) 広告案件の表示形式をサポートする
@@ -835,7 +836,7 @@ private class CustomInstreamSampleAdapter extends BaseAdapter {
             // (1) に同じ
             return isAd(position) ? 0 : 1;
         }
-        
+
         private boolean isAd(int position) {
             // (1) に同じ
             return (getItem(position) instanceof ADVSInstreamInfoModel) ? true : false;
@@ -860,7 +861,7 @@ private class CustomInstreamSampleAdapter extends BaseAdapter {
         }
 }
 ...
-// (3) インストリーム広告の情報を取得する
+// (3) インフィード広告の情報を取得する
 @Override
 public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
    for (ADVSInstreamInfoModel adData : items) {
@@ -889,6 +890,10 @@ AppDavis.setMuteLogOutput(true);
 
 ## バージョン番号はどういう意味がありますか？
 [semver](http://semver.org/) に従います
+
+##コード中にあるInstreamはどういう意味ですか
+
+このガイド中にある、`インフィード` と同じ意味で用いられています
 
 # 更新履歴
 
