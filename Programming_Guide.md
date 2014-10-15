@@ -117,7 +117,7 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 
 		//(2) ウォール広告の初期化処理
 		AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
-		ADVSWallAdLoader wallAdLoader = AppDavis.createWallAdLoader(this.getApplicationContext());
+		ADVSWallAdLoader wallAdLoader = AppDavis.createWallAdLoader(this);
 
 		//(3)onClickイベントなど、表示させたい場所でshow(Activity)メソッドを呼ぶ
 		wallAdLoader.setOnClickListener(new View.OnClickListener() {
