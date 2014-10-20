@@ -2,8 +2,12 @@
 
 * [対応環境](#対応環境)
 * [MTBurn-Android-SDKをダウンロード](#MTBurn-Android-SDKをダウンロード)
-* [MTBurn-Android-SDK ライブラリの追加](#MTBurn-Android-SDKライブラリの追加)
-* [GooglePlayServiceライブラリの追加](#GooglePlayServiceライブラリの追加)
+* [Eclipse への導入](#Eclipseへの導入)
+	* [MTBurn-Android-SDK ライブラリの追加](#MTBurn-Android-SDKライブラリの追加)
+	* [GooglePlayServiceライブラリの追加](#GooglePlayServiceライブラリの追加)
+* [Android Studioへの導入](#AndroidStudioへの導入)
+	* [MTBurn-Android-SDK ライブラリの追加](#MTBurn-Android-SDKライブラリの追加)
+	* [GooglePlayServiceライブラリの追加](#GooglePlayServiceライブラリの追加)
 
 本ドキュメントは MTBurn-Android-SDK を Eclipse のプロジェクトに追加し、実際に使える所までを記したものです。
 
@@ -31,7 +35,9 @@ MTBurn-Android-SDK-Release
 
 下記の説明に沿ってMTBurn-Android-SDKライブラリとGooglePlayServicerライブラリを追加することで SDK の各種機能を確認することが出来ます。
 
-#MTBurn-Android-SDKライブラリの追加
+#Eclipseへの導入
+
+###MTBurn-Android-SDKライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
 
@@ -48,7 +54,7 @@ MTBurn-Android-SDK-Release ライブラリを追加。
 
 ![](Install_SDK_Guide_Images/add_mtburn_android_sdk.png)
 
-#GooglePlayServiceライブラリの追加
+###GooglePlayServiceライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
 
@@ -65,4 +71,35 @@ google-play-services_libのライブラリを追加。
 ![](Install_SDK_Guide_Images/add_google_play_service.png)
 
 
-以上で完了です。
+以上で Eclipse への導入は完了です。
+
+#AndroidStudioへの導入
+
+###MTBurn-Android-SDKライブラリの追加
+
+- 1.File -> Import Module を選択。
+
+- 2.ソース・ディレクトリの参照で、ダウンロードした MTBurn-Android-SDK-Release を選択後、Next。
+![](Install_SDK_Guide_Images/import_mtburn_android_sdk_androidstudio.png)
+
+- 3.チェックマークを確認後、完了。
+![](Install_SDK_Guide_Images/import_mtburn_android_sdk_androidstudio2.png)
+
+- 4.MTBurn-Android-SDK を使用するプロジェクトの app/build.gradle の dependencies 配下に、
+`compile project(":mTBurnAndroidSDKRelease")` を追加。
+
+- 5.Sync Projects with Gradle Files を実行。
+
+###GooglePlayServiceライブラリの追加
+
+- 1.Google Play services SDK をまだインストールしていない場合は [SDK Manager からインストールする](http://developer.android.com/google/play-services/setup.html)。
+
+- 2.MTBurn-Android-SDK を使用するプロジェクトの app/build.gradle の dependencies 配下に、
+`compile 'com.google.android.gms:play-services:6.1.+'` を追記する
+
+- 3.MTBurn-Android-SDK を使用するプロジェクトの app/build.gradle の android, defaultConfig 配下の
+`minSdkVersion` を 9 に修正する
+
+- 4.Sync Projects with Gradle Files を実行。
+
+以上で Android Studio への導入は完了です。
