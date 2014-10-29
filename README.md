@@ -6,4 +6,4 @@
 
 [日本語](Programming_Guide.md)
 
-[javadoc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/index.html)
+[javadoc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
