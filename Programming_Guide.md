@@ -883,7 +883,7 @@ AppDavis.setMuteLogOutput(true);
 
 ## 〇〇の機能はありますか？
 
-[javadoc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/index.html) に public API が公開されています
+[javadoc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/) に public API が公開されています
 
 ## サンプルプロジェクトはありますか？
 [demo](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo) を参考にしてください
