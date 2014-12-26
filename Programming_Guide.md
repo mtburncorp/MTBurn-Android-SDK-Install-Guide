@@ -27,9 +27,11 @@
 		* [カスタムインフィード広告の表示時のイベント取得](#カスタムインフィード広告の表示時のイベント取得)
 		* [カスタムインフィード広告の表示](#カスタムインフィード広告の表示)
 * [よくある質問](#よくある質問)
+	* [問い合わせの仕方](#問い合わせの仕方)
 	* [SDK のログ出力は抑制できますか？](#SDK のログ出力は抑制できますか？)
 	* [〇〇の機能はありますか？](#〇〇の機能はありますか？)
 	* [サンプルプロジェクトはありますか？](#サンプルプロジェクトはありますか？)
+	* [広告が表示されない](#広告が表示されない)
 	* [バージョン番号はどういう意味がありますか？](#バージョン番号はどういう意味がありますか？)
     * [コード中にあるInstreamはどういう意味ですか](#コード中にあるInstreamはどういう意味ですか)
 * [更新履歴](#更新履歴)
@@ -873,6 +875,32 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
 
 # よくある質問
 
+##問い合わせの仕方
+
+###問い合わせをする前に次のことをご確認ください
+
+1. `Install-Guide`, [API 仕様 doc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/) を確認する、特に`よくある質問` の内容にすでに解決策がないか確認する
+2. [デモプロジェクト](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo) を動かしてみる、また、ソースコードの該当箇所を確認する
+3. [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues) を確認する
+
+###問い合わせ先
+
+- [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues) を活用ください
+- 何らかの理由により、`issues` による問い合わせが難しい場合には、担当者を介して問い合わせください
+
+###問い合わせフォーマット
+
+- 次のフォーマットをコピーペーストして、`---` を実際の内容で置き換えてください
+ - `再現した際のログ/プロジェクトファイル` がない場合は回答に時間がかかる可能性がありますので、できる限りご用意ください
+
+```
+- いつから: ---
+- どの広告種別で: ---
+- 症状: ---
+- 再現条件: ---
+- 再現した際のログ/プロジェクトファイル(あれば): ---
+```
+
 ## SDK のログ出力は抑制できますか？
 
 次のコードを任意の場所に書いてください
@@ -887,6 +915,44 @@ AppDavis.setMuteLogOutput(true);
 
 ## サンプルプロジェクトはありますか？
 [demo](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo) を参考にしてください
+
+##広告が表示されない
+
+次の順番でおおまかな原因の特定が可能です。それぞれに対する対応方法も示します。
+
+1. アカウントに問題がある
+2. アプリの呼び出し方法に問題がある
+
+###アカウントに問題がある
+
+ここでいう`アカウント`とは `媒体 ID (media_id)` とそれに紐づく `広告枠 ID (adspot_id)` を指します。
+
+まず、発行いただいた`アカウント`の設定に問題がある可能性があります。それを確認するために、別の`アカウント` で試してもらうことをお願いしております。別の`アカウント`は、このドキュメントにある `media_id 1 または media_id 2` とそれぞれに紐づく `広告枠 ID` をご参照ください。
+
+そのうえで、上記インフィード広告の説明にある、`media_id 2` とそれに紐づく`広告枠 ID` （以後、`本番の広告を表示するテストアカウント`）は、まれにですが、本番の広告を取得する性質上、広告が取得できない場合があります。
+`本番の広告を表示するテストアカウント` を設定しても広告が表示されない場合には、`テストの広告を表示するテストアカウント`を試してもらうことをお願いしております。
+
+`テストの広告を表示するテストアカウント` は `media_id` は `1` で、`広告枠 ID` は次のとおりです。
+
+| 広告枠 ID | 広告画像サイズ | 広告フォーマット |
+| --- | --- | --- |
+| NDgzOjE | 114x114 pixel | ThumnailMiddle |
+| Njc4OjI | 114x114 pixel | ThumnailSmall |
+| NzA3OjM | 640x200 pixel | LandscapePhoto |
+| MTY5OjQ | 640x320 pixel | PhotoBottom |
+| OTMzOjU | 640x320 pixel | PhotoMiddle |
+| MzUxOjk | 114x114 pixel | TextOnly |
+| OTgxOjUy | 114x114 pixel | WebView（小） |
+| MjQxOjUz | 640x200 pixel | WebView（中） |
+| NjA0OjU0 | 640x320 pixel | WebView（大） |
+
+###アプリの呼び出し方法に問題がある
+
+`発行していただいたアカウント`、`本番の広告を表示するテストアカウント`、`テストの広告を表示するテストアカウント`の 3 つを試しても表示がされない場合に、`アカウント` 関係に問題があるのか、アプリまたは SDK に問題があるのかどうかを確認してもらうことをお願いしております。
+
+[SDK 付属のデモプロジェクト](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo)はデフォルトで `本番の広告を表示するテストアカウント` で動いているので、これを起動して表示がされれば、アプリの呼び出し方法に問題があることがわかります。[main.xml](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/blob/master/demo/res/values/main.xml#L18-L43) で `アカウント`を任意に設定出来ますので、`アカウント`に問題があるのかどうかの切り分けにご活用ください。
+
+`アカウント`に問題がある場合には、担当者にご連絡ください。
 
 ## バージョン番号はどういう意味がありますか？
 [semver](http://semver.org/) に従います
