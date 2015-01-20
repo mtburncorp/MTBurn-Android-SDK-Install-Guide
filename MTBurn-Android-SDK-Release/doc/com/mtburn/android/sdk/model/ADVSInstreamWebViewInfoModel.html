@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="ja">
 <head>
-<title>ADVSInstreamAdViewBinder</title>
+<title>ADVSInstreamWebViewInfoModel</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ADVSInstreamAdViewBinder";
+        parent.document.title="ADVSInstreamWebViewInfoModel";
     }
 //-->
 </script>
@@ -33,12 +33,12 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacerListener.html" title="com.mtburn.android.sdk.instream内のインタフェース"><span class="strong">前のクラス</span></a></li>
-<li><a href="../../../../../com/mtburn/android/sdk/instream/InstreamAdAdapterImpl.html" title="com.mtburn.android.sdk.instream内のクラス"><span class="strong">次のクラス</span></a></li>
+<li><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース"><span class="strong">前のクラス</span></a></li>
+<li><a href="../../../../../com/mtburn/android/sdk/model/AppConfInfoModel.html" title="com.mtburn.android.sdk.model内のクラス"><span class="strong">次のクラス</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../index.html?com/mtburn/android/sdk/instream/ADVSInstreamAdViewBinder.html" target="_top">フレーム</a></li>
-<li><a href="ADVSInstreamAdViewBinder.html" target="_top">フレームなし</a></li>
+<li><a href="../../../../../index.html?com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html" target="_top">フレーム</a></li>
+<li><a href="ADVSInstreamWebViewInfoModel.html" target="_top">フレームなし</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
 <li><a href="../../../../../allclasses-noframe.html">すべてのクラス</a></li>
@@ -76,20 +76,16 @@
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">com.mtburn.android.sdk.instream</div>
-<h2 title="インタフェース ADVSInstreamAdViewBinder" class="title">インタフェース ADVSInstreamAdViewBinder</h2>
+<div class="subTitle">com.mtburn.android.sdk.model</div>
+<h2 title="インタフェース ADVSInstreamWebViewInfoModel" class="title">インタフェース ADVSInstreamWebViewInfoModel</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>既知の実装クラスのリスト:</dt>
-<dd><a href="../../../../../com/mtburn/android/sdk/instream/InstreamAdViewBinderImpl.html" title="com.mtburn.android.sdk.instream内のクラス">InstreamAdViewBinderImpl</a></dd>
-</dl>
 <hr>
 <br>
-<pre>public interface <span class="strong">ADVSInstreamAdViewBinder</span></pre>
+<pre>public interface <span class="strong">ADVSInstreamWebViewInfoModel</span></pre>
 </li>
 </ul>
 </div>
@@ -109,9 +105,20 @@
 <th class="colLast" scope="col">メソッドと説明</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdViewBinder.html#bindAdData(View, com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">bindAdData</a></strong>(View&nbsp;view,
-          <a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</code>&nbsp;</td>
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html#height()">height</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html#html()">html</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html#position()">position</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html#width()">width</a></strong>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -128,14 +135,40 @@
 <!--   -->
 </a>
 <h3>メソッドの詳細</h3>
-<a name="bindAdData(View, com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">
+<a name="html()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>html</h4>
+<pre>java.lang.String&nbsp;html()</pre>
+</li>
+</ul>
+<a name="width()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>width</h4>
+<pre>float&nbsp;width()</pre>
+</li>
+</ul>
+<a name="height()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>height</h4>
+<pre>float&nbsp;height()</pre>
+</li>
+</ul>
+<a name="position()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>bindAdData</h4>
-<pre>void&nbsp;bindAdData(View&nbsp;view,
-              <a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</pre>
+<h4>position</h4>
+<pre>int&nbsp;position()</pre>
 </li>
 </ul>
 </li>
@@ -163,12 +196,12 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacerListener.html" title="com.mtburn.android.sdk.instream内のインタフェース"><span class="strong">前のクラス</span></a></li>
-<li><a href="../../../../../com/mtburn/android/sdk/instream/InstreamAdAdapterImpl.html" title="com.mtburn.android.sdk.instream内のクラス"><span class="strong">次のクラス</span></a></li>
+<li><a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース"><span class="strong">前のクラス</span></a></li>
+<li><a href="../../../../../com/mtburn/android/sdk/model/AppConfInfoModel.html" title="com.mtburn.android.sdk.model内のクラス"><span class="strong">次のクラス</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../index.html?com/mtburn/android/sdk/instream/ADVSInstreamAdViewBinder.html" target="_top">フレーム</a></li>
-<li><a href="ADVSInstreamAdViewBinder.html" target="_top">フレームなし</a></li>
+<li><a href="../../../../../index.html?com/mtburn/android/sdk/model/ADVSInstreamWebViewInfoModel.html" target="_top">フレーム</a></li>
+<li><a href="ADVSInstreamWebViewInfoModel.html" target="_top">フレームなし</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
 <li><a href="../../../../../allclasses-noframe.html">すべてのクラス</a></li>

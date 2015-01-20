@@ -55,14 +55,14 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     // AppDavis SDK を初期化して、広告案件のロードを開始する
     private void setupSDK() {
         AppDavis.init(getActivity().getApplicationContext(), getString(R.integer.media_id));
-        adPlacer = AppDavis.createInstreamAdPlacer(getActivity(), getAdSpotId());
+        adPlacer = AppDavis.createInstreamAdPlacer(getActivity().getApplicationContext(), getAdSpotId());
     
         //　任意の View に広告案件情報を割り当てる
-        InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity()){
+        InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity().getApplicationContext()){
             @Override
             public View createView(ViewGroup parent, int layoutId)
             {
-                View view = LayoutInflater.from(getActivity()).inflate(R.layout.custom_instream_ad_view, parent, false);
+                View view = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.custom_instream_ad_view, parent, false);
                 AdViewHolder holder = new AdViewHolder(view);
                 view.setTag(holder);
                 return view;

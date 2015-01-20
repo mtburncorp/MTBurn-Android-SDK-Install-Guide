@@ -30,7 +30,7 @@ public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadList
         appImpLoader.setOnAppImpLoadListener(this);
 
         // iconAdLoader
-        iconAdLoader = AppDavis.createIconAdLoader(this);
+        iconAdLoader = AppDavis.createIconAdLoader(getApplicationContext());
         iconAdLoader.setOnIconAdLoadListener(this);
 
         IconAdView iconView = (IconAdView) this.findViewById(R.id.iconAd1);
