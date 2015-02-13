@@ -6,4 +6,10 @@
 
 [日本語](Programming_Guide.md)
 
-[API 仕様](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
+## AppDavis Android SDK API Spec (javadoc)
+
+[日本語](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
+
+## AppDavis Android SDK Q&A
+
+[日本語](QA.md)
