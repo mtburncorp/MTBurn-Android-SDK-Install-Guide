@@ -1,33 +1,34 @@
 # 目次
 
-* [まずはじめに](#まずはじめに)
-	* [AndroidManifest.xml](#AndroidManifest.xml)
-	* [Media Id の取得](#Media Id の取得)
-	* [コード内初期化](#コード内初期化)
-* [ウォール広告](#ウォール広告)
-	* [ウォール広告の表示](#ウォール広告の表示)
-	* [ウォール広告の表示時のイベント取得](#ウォール広告の表示時のイベント取得)
-* [アイコン広告](#アイコン広告)
-	* [アイコン広告の表示](#アイコン広告の表示)
-	* [アイコン広告の表示時のイベント取得](#アイコン広告の表示時のイベント取得)
-	* [アイコン広告のリフレッシュ時間の調整](#アイコン広告のリフレッシュ時間の調整)
-	* [アイコン広告のリフレッシュ停止](#アイコン広告のリフレッシュ停止)
-	* [アイコン広告のリフレッシュ管理](#アイコン広告のリフレッシュ管理)
-	* [アイコン広告表示パラメータの設定](#アイコン広告表示パラメータの設定)
-* [インフィード広告](#インフィード広告)
-	* [広告枠 Id の取得](#広告枠 Id の取得)
-	* [簡易版インフィード広告](#簡易版インフィード広告)
-		* [簡易版インフィード広告の表示](#簡易版インフィード広告の表示)
-		* [簡易版インフィード広告の表示時のイベント取得](#簡易版インフィード広告の表示時のイベント取得)
-		* [簡易版インフィード広告の追加ロード](#簡易版インフィード広告の追加ロード)
-		* [利用可能な簡易版インフィード広告フォーマット](#利用可能な簡易版インフィード広告フォーマット)
-	* [カスタムインフィード広告](#カスタムインフィード広告)
-		* [カスタムインフィード広告のロード](#カスタムインフィード広告のロード)
-		* [カスタムインフィード広告の表示に用いるパラメーター](##カスタムインフィード広告の表示に用いるパラメーター)
-		* [カスタムインフィード広告の表示時のイベント取得](#カスタムインフィード広告の表示時のイベント取得)
-		* [カスタムインフィード広告の表示](#カスタムインフィード広告の表示)
-* [更新履歴](#更新履歴)
+* [まずはじめに](#start)
+	* [AndroidManifest.xml](#start/manifest)
+	* [Media Id の取得](#start/media_id)
+	* [コード内初期化](#start/init)
+* [ウォール広告](#wall)
+	* [ウォール広告の表示](#wall/display)
+	* [ウォール広告の表示時のイベント取得](#wall/event)
+* [アイコン広告](#icon)
+	* [アイコン広告の表示](#icon/display)
+	* [アイコン広告の表示時のイベント取得](#icon/event)
+	* [アイコン広告のリフレッシュ時間の調整](#icon/refresh)
+	* [アイコン広告のリフレッシュ停止](#icon/refresh_stop)
+	* [アイコン広告のリフレッシュ管理](#icon/refresh_manage)
+	* [アイコン広告表示パラメータの設定](#icon/display_param)
+* [インフィード広告](#infeed)
+	* [広告枠 Id の取得](#infeed/adspot_id)
+	* [簡易版インフィード広告](#infeed/simple)
+		* [簡易版インフィード広告の表示](#infeed/simple/display)
+		* [簡易版インフィード広告の表示時のイベント取得](#infeed/simple/event)
+		* [簡易版インフィード広告の追加ロード](#infeed/simple/additional_load)
+		* [利用可能な簡易版インフィード広告フォーマット](#infeed/simple/format)
+	* [カスタムインフィード広告](#infeed/custom)
+		* [カスタムインフィード広告のロード](#infeed/custom/load)
+		* [カスタムインフィード広告の表示に用いるパラメーター](#infeed/custom/display_param)
+		* [カスタムインフィード広告の表示時のイベント取得](#infeed/custom/event)
+		* [カスタムインフィード広告の表示](#infeed/custom/display)
+* [更新履歴](#update)
 
+<a name="start"></a>
 # まずはじめに
 
 ダウンロードした SDK プロジェクト内の doc/ 以下に javadoc が格納されています。
@@ -36,6 +37,7 @@
 
 doc/index.html をお使いのブラウザで閲覧ください。
 
+<a name="start/manifest"></a>
 ## AndroidManifest.xml
 
 AndroidManifest.xmlに
@@ -61,6 +63,7 @@ AndroidManifest.xmlに
 
 ```
 
+<a name="start/media_id"></a>
 ##Media Id の取得
 
 管理画面より登録し、Media Id を発行します。
@@ -73,6 +76,7 @@ AndroidManifest.xmlに
 
 テスト用の Media Id "1" または "2" をご利用いただくことができます。ダミーデータが表示され、動作確認が可能です。
 
+<a name="start/init"></a>
 ##コード内初期化
 
 ```Java
@@ -85,8 +89,10 @@ AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
 }
 ```
 
+<a name="wall"></a>
 # ウォール広告
 
+<a name="wall/display"></a>
 ## ウォール広告の表示
 ウォール広告を表示するためにAndroidManifest.xmlのapplicationタグ内に以下activityを記述してください。
 
@@ -124,6 +130,7 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 …
 ```
 
+<a name="wall/event"></a>
 ## ウォール広告の表示時のイベント取得
 
 ウォール広告を表示する際に、そのイベントを受け取りたい場合があります。
@@ -155,8 +162,10 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
    }
 ```
 
+<a name="icon"></a>
 # アイコン広告
 
+<a name="icon/display"></a>
 ## アイコン広告の表示
 
 アイコン広告を表示するために必要な IconAdView を生成しレイアウトに追加します。
@@ -220,8 +229,9 @@ public class MyActivity extends Activity {
 		iconAdLoader.stopAutoRefreshing();
 	}
 }
-
 ```
+
+<a name="icon/event"></a>
 ## アイコン広告の表示時のイベント取得
 
 アイコン広告を表示する際に、そのイベントを受け取りたい場合があります。
@@ -278,6 +288,7 @@ iconAdViewListener = new ADVSIconAdViewListener() {
 }
 ```
 
+<a name="icon/refresh"></a>
 ## アイコン広告のリフレッシュ時間の調整
 
 アイコン広告情報は ADVSIconAdLoader によってリフレッシュされます。
@@ -299,6 +310,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+<a name="icon/refresh_stop"></a>
 ## アイコン広告のリフレッシュ停止
 
 デフォルトでは自動的にリフレッシュされますので、リフレッシュされたくない場合は以下のように設定してください。
@@ -314,6 +326,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+<a name="icon/refresh_manage"></a>
 ## アイコン広告のリフレッシュ管理
 
 リフレッシュ設定されたアイコン広告が画面内に表示しないケースがある場合には、必ず一時停止・再開処理を行ってください。これには、複数広告の切り替え処理（広告振り分け SDK の利用等も含む）を行う場合も含まれます。
@@ -321,6 +334,7 @@ protected void onCreate(Bundle savedInstanceState) {
 - 画面遷移で広告が隠れる場合など、画面内にアイコン広告が表示されない場合は、`stopAutoRefreshing` メソッドでリフレッシュを停止してください。
 - 画面遷移で広告のある View に戻った場合など、画面内にアイコン広告を表示する場合は、`startAutoRefreshing` メソッドでリフレッシュを再開させてください。
 
+<a name="icon/display_param"></a>
 ## アイコン広告表示パラメータの設定
 
 ADVSIconAdView のパラメーターをコントロールすることで、アイコン広告の表示形式の調整が可能です。以下の項目が設定できます。
@@ -373,8 +387,10 @@ setTextColor(int color), setTextColor(ColorStateList colors) | 文字色(RGB16�
         android:textColor="@color/icon_ad_view_text" />
 ```
 
+<a name="infeed"></a>
 #インフィード広告
 
+<a name="infeed/adspot_id"></a>
 ##広告枠 Id の取得
 
 Media Id の取得に加えて、事前に広告枠の登録を行います。以下の情報を設定し、広告枠IDが払い出されます。
@@ -455,11 +471,13 @@ Media Id の取得に加えて、事前に広告枠の登録を行います。�
 
 **現在は、新規広告枠の登録設定については担当者へお問い合わせください。**
 
+<a name="infeed/simple"></a>
 ##簡易版インフィード広告
 
 ListView と ArrayAdapter を用いた、ビューコンポーネントを使っている場合に簡易に実装が可能です。
 
-##簡易版インフィード広告の表示
+<a name="infeed/simple/display"></a>
+###簡易版インフィード広告の表示
 
 ADVSInstreamAdAdapter を用いて以下の様に実装し、インフィード広告を表示します。
 
@@ -504,7 +522,8 @@ public class MyActivity extends Activity {
 
 1リクエストあたりの広告案件数と広告位置配列は、`AppDavis のcreateInstreamAdAdapter(Context context, T originalAdapter, String adSpotId, int adCount, List<Integer>positions)`などのAPIを使ってコントロールすることも出来ます。
 
-##簡易版インフィード広告の表示時のイベント取得
+<a name="infeed/simple/event"></a>
+###簡易版インフィード広告の表示時のイベント取得
 
 インフィード広告を表示する際に、そのイベントを受け取りたい場合があります。
 
@@ -557,7 +576,8 @@ listener = new ADVSInstreamAdLoadListener() {
 };
 ```
 
-##簡易版インフィード広告の追加ロード
+<a name="infeed/simple/additional_load"></a>
+###簡易版インフィード広告の追加ロード
 
 ユーザーがサイト下部に到達した際に追加フィードを読み込むような UI の場合に、追加で広告ロードを行うことも可能です。
 
@@ -569,7 +589,8 @@ public void loadMore()
 }
 ```
 
-##利用可能な簡易版インフィード広告フォーマット
+<a name="infeed/simple/format"></a>
+###利用可能な簡易版インフィード広告フォーマット
 
 - 1-1) ThumnailMiddle
 
@@ -665,11 +686,13 @@ public void loadMore()
 
 HTML を入稿することで、アプリ内 WebView 上で描画することが出来ます。
 
-#カスタムインフィード広告
+<a name="infeed/custom"></a>
+##カスタムインフィード広告
 
 簡易版インフィード広告よりも柔軟な表示を行いたい場合などに、カスタム型のインフィード広告機能を利用することが出来ます。
 
-##カスタムインフィード広告のロード
+<a name="infeed/custom/load"></a>
+###カスタムインフィード広告のロード
 
 ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
@@ -743,7 +766,8 @@ public class MyActivity extends Activity {
 }
 ```
 
-##カスタムインフィード広告の表示に用いるパラメーター
+<a name="infeed/custom/display_param"></a>
+###カスタムインフィード広告の表示に用いるパラメーター
 
 | パラメータ名 | 説明 | 例 |
 | --- | --- | --- |
@@ -752,7 +776,8 @@ public class MyActivity extends Activity {
 | iconImage | アイコン型の正方形画像(114x114 pixel固定) | 下記メソッドを呼び出してください |
 | mainImage | バナー型の矩形画像など(広告枠IDごとにサイズ可変) | 下記メソッドを呼び出してください |
 
-##カスタムインフィード広告の表示時のイベント取得
+<a name="infeed/custom/event"></a>
+###カスタムインフィード広告の表示時のイベント取得
 
 カスタムインフィード広告を表示する際に、そのイベントを受け取りたい場合があります。
 
@@ -795,7 +820,8 @@ listener = new ADVSInstreamAdPlacerListener() {
 };
 ```
 
-##カスタムインフィード広告の表示
+<a name="infeed/custom/display"></a>
+###カスタムインフィード広告の表示
 
 ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
@@ -865,6 +891,7 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
 }
 ```
 
+<a name="update"></a>
 # 更新履歴
 
 [github releases](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases) をご確認ください

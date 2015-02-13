@@ -1,16 +1,17 @@
 # 目次
 
-* [対応環境](#対応環境)
-* [MTBurn-Android-SDKをダウンロード](#MTBurn-Android-SDKをダウンロード)
-* [Eclipse への導入](#Eclipseへの導入)
-	* [MTBurn-Android-SDK ライブラリの追加](#MTBurn-Android-SDKライブラリの追加)
-	* [GooglePlayServiceライブラリの追加](#GooglePlayServiceライブラリの追加)
-* [Android Studioへの導入](#AndroidStudioへの導入)
-	* [MTBurn-Android-SDK ライブラリの追加](#MTBurn-Android-SDKライブラリの追加)
-	* [GooglePlayServiceライブラリの追加](#GooglePlayServiceライブラリの追加)
+* [対応環境](#support)
+* [MTBurn-Android-SDKをダウンロード](#dl)
+* [Eclipse への導入](#eclipse)
+	* [MTBurn-Android-SDK ライブラリの追加](#eclipse/android-sdk)
+	* [GooglePlayServiceライブラリの追加](#eclipse/google-play-service)
+* [Android Studioへの導入](#android-studio)
+	* [MTBurn-Android-SDK ライブラリの追加](#android-studio/android-sdk)
+	* [GooglePlayServiceライブラリの追加](#android-studio/google-play-service)
 
-本ドキュメントは MTBurn-Android-SDK を Eclipse のプロジェクトに追加し、実際に使える所までを記したものです。
+本ドキュメントは MTBurn-Android-SDK を Eclipse または Android Studio のプロジェクトに追加し、実際に使える所までを記したものです。
 
+<a name="support"></a>
 #対応環境
 
 動作する **Android のSDKVersionは 8 以上**になります。
@@ -19,6 +20,7 @@
 
 [a@mtburn.com](a@mtburn.com)
 
+<a name="dl"></a>
 #MTBurn-Android-SDKをダウンロード
 
 以下の URL から AppDavis Android SDK をダウンロードします。最新のバージョンを選択することを推奨します。
@@ -35,8 +37,10 @@ MTBurn-Android-SDK-Release
 
 下記の説明に沿ってMTBurn-Android-SDKライブラリとGooglePlayServicerライブラリを追加することで SDK の各種機能を確認することが出来ます。
 
+<a name="eclipse"></a>
 #Eclipseへの導入
 
+<a name="eclipse/android-sdk"></a>
 ###MTBurn-Android-SDKライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
@@ -54,6 +58,7 @@ MTBurn-Android-SDK-Release ライブラリを追加。
 
 ![](Install_SDK_Guide_Images/add_mtburn_android_sdk.png)
 
+<a name="eclipse/google-play-service"></a>
 ###GooglePlayServiceライブラリの追加
 
 - 1.Existing Android Code into Workspaceを選択。
@@ -73,8 +78,10 @@ google-play-services_libのライブラリを追加。
 
 以上で Eclipse への導入は完了です。
 
+<a name="android-studio"></a>
 #AndroidStudioへの導入
 
+<a name="android-studio/android-sdk"></a>
 ###MTBurn-Android-SDKライブラリの追加
 
 - 1.File -> Import Module を選択。
@@ -90,6 +97,7 @@ google-play-services_libのライブラリを追加。
 
 - 5.Sync Projects with Gradle Files を実行。
 
+<a name="android-studio/google-play-service"></a>
 ###GooglePlayServiceライブラリの追加
 
 - 1.Google Play services SDK をまだインストールしていない場合は [SDK Manager からインストールする](http://developer.android.com/google/play-services/setup.html)。
