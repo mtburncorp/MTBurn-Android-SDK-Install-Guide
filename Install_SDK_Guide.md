@@ -71,6 +71,8 @@ MTBurn-Android-SDK-Release ライブラリを追加。
 
 - 4.MTBurn-Android-SDK を使用するプロジェクトのプロパティを開き、
 google-play-services_libのライブラリを追加。
+ - バージョンは 4.0 以上であれば問題ありません
+
 - 5.OKを選択。
 
 ![](Install_SDK_Guide_Images/add_google_play_service.png)
@@ -104,6 +106,7 @@ google-play-services_libのライブラリを追加。
 
 - 2.MTBurn-Android-SDK を使用するプロジェクトの app/build.gradle の dependencies 配下に、
 `compile 'com.google.android.gms:play-services:6.1.+'` を追記する
+ - バージョンは 4.0 以上であれば問題ありません
 
 - 3.MTBurn-Android-SDK を使用するプロジェクトの app/build.gradle の android, defaultConfig 配下の
 `minSdkVersion` を 9 に修正する
