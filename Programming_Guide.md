@@ -595,24 +595,24 @@ public void loadMore()
 - 1-1) ThumnailMiddle
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
-    // |             |  icon + name                      Ad  |
+    // |             |  icon + name                          |
     // |   image     |  ad text                              |
     // |             |                                       |
-    // |             |                                       |
-    // |             |                                       |
+    // |   90x90     |                                       |
+    // |             |                                    PR |
     //  -----------------------------------------------------
 ```
 
 - 1-2) ThumnailSmall
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
     // |  -------    icon + name                             |
-    // | | image |   Sponsored                               |
-    // | |       |   ad text                                 |
+    // | | image |   PR                                      |
+    // | | 50x50 |   ad text                                 |
     // | |       |                                           |
     // |  -------                                            |
     //  -----------------------------------------------------
@@ -621,7 +621,7 @@ public void loadMore()
 - 1-3) LandscapePhoto
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
     // |                                                     |
     // |                  ad image                           |
@@ -630,17 +630,18 @@ public void loadMore()
     // |  ad text                                            |
     // |                                                     |
     // |                                                     |
-    // |  advertiser icon + name                         Ad  |
+    // |                                                 PR  |
+    // |  advertiser icon + name                             |
     //  -----------------------------------------------------
 ```
 
 - 1-4) PhotoBottom
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
     // |  advertiser |  advertiser name                      |
-    // |     icon    |  Sponsored                            |
+    // |     icon    |  PR                                   |
     // |             |  ad text                              |
     // | --------------------------------------------------- |
     // |                                                     |
@@ -653,14 +654,14 @@ public void loadMore()
 - 1-5) PhotoMiddle
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
-    // | icon + name                                     Ad  |
+    // | icon + name                                         |
+    // |                                                  PR |
     // | --------------------------------------------------- |
     // |                                                     |
     // |                                                     |
     // |                      image                          |
-    // |                                                     |
     // |                                                     |
     // |                                                     |
     // |                                                     |
@@ -672,9 +673,11 @@ public void loadMore()
 - 1-6) TextOnly
 
 ```
-	// The format looks like this
+    // The format looks like this
     //  -----------------------------------------------------
-    // |  icon + name                              Sponsored |
+    // |  icon + name                                        |
+    // |                                                  PR |
+    // | --------------------------------------------------- |
     // |                                                     |
     // |             ad text                                 |
     // |                                                     |
@@ -750,17 +753,24 @@ public class MyActivity extends Activity {
         TextView adText;
         ImageView adImage;
         ImageView iconImage;
+        TextView adSponsoredLabel;
 
         public AdViewHolder(View convertView) {
             advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
             adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
             adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
             iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+            adSponsoredLabel = (TextView) convertView.findViewById(R.id.custom_instream_sponsor_name);
         }
 
         void setData(ADVSInstreamInfoModel adData) {
             advertiserName.setText(adData.title());
             adText.setText(adData.content());
+
+            String displayedAdvertiser = adData.displayedAdvertiser();
+            if (null != displayedAdvertiser && 0 < displayedAdvertiser.length()) {
+                adSponsoredLabel.setText(displayedAdvertiser);
+            }
         }
     }
 }
@@ -773,6 +783,7 @@ public class MyActivity extends Activity {
 | --- | --- | --- |
 | title | タイトル文言(全角20文字以内) | `TestAd` |
 | content | 説明・紹介文(全角40~70文字以内) | `テスト広告です。` |
+| displayedAdvertiser | 表記広告主名 | `飲料会社 A社` |
 | iconImage | アイコン型の正方形画像(114x114 pixel固定) | 下記メソッドを呼び出してください |
 | mainImage | バナー型の矩形画像など(広告枠IDごとにサイズ可変) | 下記メソッドを呼び出してください |
 
