@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 //-----------------------------------------------------------------------
 // SDK related package
 //-----------------------------------------------------------------------
@@ -182,17 +183,24 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
         TextView adText;
         ImageView adImage;
         ImageView iconImage;
+        TextView adSponsoredLabel;
         
         public AdViewHolder(View convertView) {
             advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
             adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
             adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
             iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+            adSponsoredLabel = (TextView) convertView.findViewById(R.id.custom_instream_sponsor_name);
         }
         
         void setData(ADVSInstreamInfoModel adData) {
             advertiserName.setText(adData.title());
             adText.setText(adData.content());
+            
+            String displayedAdvertiser = adData.displayedAdvertiser();
+            if (null != displayedAdvertiser && 0 < displayedAdvertiser.length()) {
+                adSponsoredLabel.setText(displayedAdvertiser);
+            }
         }
     }
 }

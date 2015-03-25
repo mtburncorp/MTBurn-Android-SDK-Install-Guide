@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.usemtburn_android_sdk"
     android:versionCode="10"
-    android:versionName="1.1.0" >
+    android:versionName="1.1.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -10,10 +10,10 @@
 
     <!-- AppDavis SDK requires INTERNET permission tag -->
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <!-- Suppress Error opening trace file: No such file or directory (2) -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+
     <!-- Enable to remote logcat (see https://deploygate.com/docs/sdk?locale=ja) -->
     <uses-permission android:name="android.permission.READ_LOGS" />
 
@@ -23,12 +23,12 @@
         android:icon="@drawable/appdavis"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
+
         <!-- AppDavis SDK requires google play services and it requires meta-data tag -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        
+
         <!-- AppDavis SDK requires receiver tag -->
         <receiver android:name="com.mtburn.android.sdk.util.AppInstallationReceiver">
             <intent-filter>
@@ -36,7 +36,7 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        
+
         <!-- AppDavis SDK requires activity tag, if app want to show a wall advertisement -->
         <activity
             android:name="com.mtburn.android.sdk.wall.WallAdActivity"
@@ -63,7 +63,7 @@
             android:name="com.example.usemtburn_android_instream.activity.InstreamAdSampleActivity"
             android:label="@string/instream_ad_sample_title" >
         </activity>
-        <activity 
+        <activity
             android:name="com.example.usemtburn_android_instream.activity.ItemViewActivity"
             android:label="@string/instream_ad_sample_title" >
         </activity>
@@ -71,7 +71,7 @@
             android:name="com.example.usemtburn_android_sdk.CustomWallAdActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity 
+        <activity
             android:name="com.example.usemtburn_android_instream.activity.CustomInstreamAdSampleActivity"
             android:label="@string/instream_ad_sample_title" >
         </activity>

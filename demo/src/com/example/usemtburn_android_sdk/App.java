@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.util.Log;
 
+import com.deploygate.sdk.DeployGate;
+import com.newrelic.agent.android.NewRelic;
 import com.mtburn.android.sdk.AppDavis;
 
 public class App extends Application {
@@ -21,6 +23,12 @@ public class App extends Application {
         AppDavis.setMuteLogOutput(MUTE_LOG_OUTPUT);
         
         if (DEVELOPER_MODE) {
+            
+            // Enable to investigate remote crash logs to make our SDK more stable
+            DeployGate.install(this);
+            
+            // Enable to send performance metrics to newrelic server
+            NewRelic.withApplicationToken("AAb5e8e43d35a036e0039453e6e9b6d6afb69ac4e3").start(this);
             
             // Enable StrictMode
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {

@@ -4,10 +4,10 @@
     <!-- application common use -->
     <string name="app_name">AppDavisDemo</string>
     
-    <string name="icon_ad_sample_title">アイコン広告サンプル</string>
-    <string name="wall_ad_sample_title">ウォール広告サンプル</string>
-    <string name="instream_ad_sample_title">ネイティブ広告サンプル</string>
-    <string name="custom_instream_ad_sample_title">ネイティブ(カスタム)広告サンプル</string>
+    <string name="icon_ad_sample_title">Icon Ads</string>
+    <string name="wall_ad_sample_title">Wall Ads</string>
+    <string name="instream_ad_sample_title">Native Ads</string>
+    <string name="custom_instream_ad_sample_title">Native Ads (Custom)</string>
     <string-array name="sample_title_list">
         <item>@string/icon_ad_sample_title</item>
         <item>@string/wall_ad_sample_title</item>
@@ -55,25 +55,25 @@
     <!-- appdavis icon ads -->
     
     <!-- appdavis adapter instream ads -->
-    <string name="post_text">This is a good Post, I hope it will have 2 lines. Please give me 2 lines</string>
+    <string name="post_text">Sample Post</string>
     <string name="pull_to_refresh">Pull down to refresh&#8230;</string>
     <string name="release_to_refresh">Release to refresh&#8230;</string>
     <string name="loading">Loading&#8230;</string>
     <string name="footer_loading">Click to load more&#8230;</string>
     <string name="head_arrowImage">head_arrowImage</string>
     <string name="item_view_activity">Web</string>
-    <string name="item_resource_text">共同通信</string>
+    <string name="item_resource_text">Demo</string>
     
     <string-array name="category_names">
-        <item>トップ</item>
-        <item>エンタメ</item>
-        <item>スポーツ</item>
-        <item>グルメ</item>
-        <item>国内</item>
-        <item>政治</item>
-        <item>経済</item>
-        <item>テクノロジー</item>
-        <item>国際</item>
+        <item>Top</item>
+        <item>Entertainment</item>
+        <item>Sports</item>
+        <item>Gourmet</item>
+        <item>Japan</item>
+        <item>Politics</item>
+        <item>Economy</item>
+        <item>Technology</item>
+        <item>International</item>
     </string-array>
     <array name="category_colors">
         <item>#ff0700</item>
@@ -113,7 +113,7 @@
     <!-- appdavis adapter instream ads -->
     
     <!-- appdavis custom instream ads -->
-    <string name="custom_instream_sample_message">サンプルコンテンツです</string>
+    <string name="custom_instream_sample_message">Dummy Message</string>
     <string-array name="custom_instream_message_list">
         <item>@string/custom_instream_sample_message</item>
         <item>@string/custom_instream_sample_message</item>
@@ -122,10 +122,10 @@
         <item>@string/custom_instream_sample_message</item>
         <item>@string/custom_instream_sample_message</item>
     </string-array>
-    <string name="custom_instream_ad_image_desc">カスタム広告です</string>
-    <string name="custom_instream_ad_title">Advertiser (up to 25 characters)</string>
-    <string name="custom_instream_ad_sponsored">広告</string>
-    <string name="custom_instream_ad_desc">Sample ad text - appdavis_instream will dynamically select which ad text to use by measuring the size of the TextView.</string>
+    <string name="custom_instream_ad_image_desc">Custom Ad Image</string>
+    <string name="custom_instream_ad_title">Custom Ad Title</string>
+    <string name="custom_instream_ad_sponsored">PR</string>
+    <string name="custom_instream_ad_desc">Custom Ad Description</string>
     <!-- appdavis custom instream ads -->
     
 </resources>

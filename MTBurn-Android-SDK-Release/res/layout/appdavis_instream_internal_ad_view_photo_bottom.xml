@@ -60,6 +60,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@id/appdavis_instream_ad_sponsored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/appdavis_instream_ph_b_sponsored_ml"
@@ -79,6 +80,7 @@
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:text="@string/appdavis_instream_ad_desc"
+                android:textColor="@color/dark_gray"
                 android:textSize="@dimen/appdavis_instream_ph_b_desc_size" />
         </LinearLayout>
     </LinearLayout>

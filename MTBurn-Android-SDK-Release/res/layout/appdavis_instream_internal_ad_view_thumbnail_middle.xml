@@ -85,16 +85,6 @@
                 android:textColor="#ff0099cc"
                 android:textSize="@dimen/appdavis_instream_th_m_name_size"
                 android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/appdavis_instream_th_m_sponsored_ml"
-                android:layout_marginRight="@dimen/appdavis_instream_th_m_sponsored_mr"
-                android:singleLine="true"
-                android:text="@string/appdavis_instream_ad_sponsored"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/appdavis_instream_th_m_sponsored_size" />
         </LinearLayout>
 
         <!-- ad text -->
@@ -107,7 +97,22 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:text="@string/appdavis_instream_ad_desc"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/appdavis_instream_th_m_desc_size" />
+        
+        <!-- ad sponsor -->
+        
+        <TextView
+                android:id="@id/appdavis_instream_ad_sponsored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appdavis_instream_th_m_sponsored_ml"
+                android:layout_marginRight="@dimen/appdavis_instream_th_m_sponsored_mr"
+                android:layout_gravity="right"
+                android:singleLine="true"
+                android:text="@string/appdavis_instream_ad_sponsored"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/appdavis_instream_th_m_sponsored_size" />
     </LinearLayout>
 
 </LinearLayout>
