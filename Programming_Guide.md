@@ -348,8 +348,8 @@ app:contentHeight | 広告領域の縦幅 (dp) | int
 app:imageWidth | 広告画像横幅 (dp) | int
 app:imageHeight | 広告画像縦幅 (dp) | int
 app:titlePadding | 文字領域のパディング(dp)。アイコン画像と文字間の幅 | int
-android:textColor | 文字色 (RGB16進数表記) | NSString
-android:background | 文字領域の背景色 (RGB16進数表記) | NSString
+android:textColor | 文字色 (RGB16進数表記) | String
+android:background | 文字領域の背景色 (RGB16進数表記) | String
 
 - ADVSIconAdView の Set method から設定可能な項目
 
