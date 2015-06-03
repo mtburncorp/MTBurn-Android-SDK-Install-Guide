@@ -4,10 +4,10 @@
 	* [AndroidManifest.xml](#start/manifest)
 	* [Media Id の取得](#start/media_id)
 	* [コード内初期化](#start/init)
-* [ウォール広告](#wall)
+* [(deprecated) ウォール広告](#wall)
 	* [ウォール広告の表示](#wall/display)
 	* [ウォール広告の表示時のイベント取得](#wall/event)
-* [アイコン広告](#icon)
+* [(deprecated) アイコン広告](#icon)
 	* [アイコン広告の表示](#icon/display)
 	* [アイコン広告の表示時のイベント取得](#icon/event)
 	* [アイコン広告のリフレッシュ時間の調整](#icon/refresh)
@@ -90,7 +90,9 @@ AppDavis.init(this.getApplicationContext(), "YOUR_MEDIA_ID");
 ```
 
 <a name="wall"></a>
-# ウォール広告
+#(deprecated) ウォール広告
+
+__次のアップデートにて、ウォール広告 API の削除を予定しております。既存のウォール広告呼び出しへの影響はありません。__
 
 <a name="wall/display"></a>
 ## ウォール広告の表示
@@ -163,7 +165,9 @@ import com.mtburn.android.sdk.wall.WallAdActivity;
 ```
 
 <a name="icon"></a>
-# アイコン広告
+#(deprecated) アイコン広告
+
+__次のアップデートにて、アイコン広告 API の削除を予定しております。既存のアイコン広告呼び出しへの影響はありません。__
 
 <a name="icon/display"></a>
 ## アイコン広告の表示
