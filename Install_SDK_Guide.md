@@ -8,6 +8,7 @@
 * [Android Studioへの導入](#android-studio)
 	* [MTBurn-Android-SDK ライブラリの追加](#android-studio/android-sdk)
 	* [GooglePlayServiceライブラリの追加](#android-studio/google-play-service)
+* [ウォール広告とアイコン広告について](#wall_icon)
 
 本ドキュメントは MTBurn-Android-SDK を Eclipse または Android Studio のプロジェクトに追加し、実際に使える所までを記したものです。
 
@@ -114,3 +115,12 @@ google-play-services_libのライブラリを追加。
 - 4.Sync Projects with Gradle Files を実行。
 
 以上で Android Studio への導入は完了です。
+
+<a name="wall_icon"></a>
+#ウォール広告とアイコン広告について
+
+次のアップデートよりウォール広告とアイコン広告の API の削除を予定しております。
+
+すでに実装されている SDK への影響はありませんが、広告案件の減少が予想されます。
+
+`JavaScript SDK` を使ってアイコン広告を実装する選択肢が用意されております。管理画面より広告タグを発行して使うことができます。
