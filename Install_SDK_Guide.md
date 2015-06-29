@@ -10,7 +10,7 @@
 	* [GooglePlayServiceライブラリの追加](#android-studio/google-play-service)
 * [ウォール広告とアイコン広告について](#wall_icon)
 
-本ドキュメントは MTBurn-Android-SDK を Eclipse または Android Studio のプロジェクトに追加し、実際に使える所までを記したものです。
+本ドキュメントは Hike Android SDK (旧 AppDavis Android SDK) を Eclipse または Android Studio のプロジェクトに追加し、実際に使える所までを記したものです。
 
 <a name="support"></a>
 #対応環境
@@ -24,9 +24,9 @@
 <a name="dl"></a>
 #MTBurn-Android-SDKをダウンロード
 
-以下の URL から AppDavis Android SDK をダウンロードします。最新のバージョンを選択することを推奨します。
+以下の URL から Hike Android SDK をダウンロードします。最新のバージョンを選択することを推奨します。
 
-[AppDavis Android SDK をダウンロード](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases)
+[Hike Android SDK をダウンロード](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases)
 
 ダウンロードが完了したら、取得した zip ファイルを解凍して SDK ライブラリを確認して下さい。
 
