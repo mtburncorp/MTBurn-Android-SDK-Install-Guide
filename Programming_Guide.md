@@ -909,4 +909,4 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
 <a name="update"></a>
 # 更新履歴
 
-[github releases](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/releases) をご確認ください
+[CHANGELOG](../CHANGELOG.md) をご確認ください
