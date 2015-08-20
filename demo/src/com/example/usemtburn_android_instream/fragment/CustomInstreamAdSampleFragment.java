@@ -145,8 +145,10 @@ public class CustomInstreamAdSampleFragment extends Fragment implements ADVSInst
     public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
         App.logd("onAdsLoaded");
         
+        int i = 1;
         for (ADVSInstreamInfoModel adData : items) {
-            adapter.dataSourceList.add(3, adData);
+            adapter.dataSourceList.add(i, adData);
+            i += 3;
         }
         adapter.notifyDataSetChanged();
     }

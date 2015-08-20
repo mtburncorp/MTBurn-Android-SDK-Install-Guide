@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,7 +129,7 @@ public class ItemAdapter extends ArrayAdapter<ItemModel> {
         Drawable imageDrawable = DrawableCache.getImage(imageResIdStr);
         if (imageDrawable == null) {
             int imageResource = myContext.getResources().getIdentifier(imageResIdStr, "drawable", myContext.getPackageName());
-            imageDrawable = myContext.getResources().getDrawable(imageResource);
+            imageDrawable = ContextCompat.getDrawable(myContext, imageResource);
             
             DrawableCache.setImage(imageResIdStr, imageDrawable);
         }

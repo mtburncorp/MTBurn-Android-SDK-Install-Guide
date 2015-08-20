@@ -11,6 +11,7 @@ import com.mtburn.android.sdk.wall.ADVSWallAdLoadListener;
 import com.mtburn.android.sdk.wall.ADVSWallAdLoader;
 import com.mtburn.android.sdk.wall.WallAdActivity;
 
+@SuppressWarnings("deprecation")
 public class WallAdSampleActivity extends Activity implements ADVSWallAdLoadListener, ADVSAppImpLoadListener {
 
     private ADVSAppImpLoader appImpLoader;

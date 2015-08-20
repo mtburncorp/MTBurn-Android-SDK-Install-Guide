@@ -8,11 +8,13 @@
     <string name="wall_ad_sample_title">Wall Ads</string>
     <string name="instream_ad_sample_title">Native Ads</string>
     <string name="custom_instream_ad_sample_title">Native Ads (Custom)</string>
+    <string name="custom_instream_ad_recycler_sample_title">Native Ads 2 (Custom)</string>
     <string-array name="sample_title_list">
         <item>@string/icon_ad_sample_title</item>
         <item>@string/wall_ad_sample_title</item>
         <item>@string/instream_ad_sample_title</item>
         <item>@string/custom_instream_ad_sample_title</item>
+        <item>@string/custom_instream_ad_recycler_sample_title</item>
     </string-array>
     
     <!-- media_id 1 or 2 is used for test -->
@@ -40,7 +42,7 @@
         <item>OTkzOjU2</item>
         <item>MzEzOjU3</item>
     </string-array>
-    <string name="media_id_2_adspot_custom">NTMwOjU1Nw</string>
+    <string name="media_id_2_adspot_custom">NDQ0OjMx</string>
     <!-- application common use -->
     
     <!-- appdavis wall ads -->
@@ -110,6 +112,7 @@
     <color name="brown">#CC9900</color>
     <color name="cream">#FFFFCC</color>
     <color name="dark_gray">#777770</color>
+    <color name="background_holo_light">#fff3f3f3</color>
     <!-- appdavis adapter instream ads -->
     
     <!-- appdavis custom instream ads -->

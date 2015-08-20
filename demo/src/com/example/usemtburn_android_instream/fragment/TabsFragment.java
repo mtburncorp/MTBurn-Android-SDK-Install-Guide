@@ -6,9 +6,6 @@ import com.example.usemtburn_android_instream.Tab;
 import com.example.usemtburn_android_instream.TabPageTransformer;
 import com.example.usemtburn_android_instream.adapter.TabPagerAdapter;
 import com.example.usemtburn_android_sdk.R;
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.view.animation.AnimatorProxy;
 
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
@@ -17,8 +14,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -93,7 +92,7 @@ public class TabsFragment extends Fragment
             throw new IllegalStateException("ViewPager does not have adapter instance.");
         }
 
-        viewPager.setOnPageChangeListener(this);
+        viewPager.addOnPageChangeListener(this);
         
         // # 31. Fixed a freeze bug on v3.x
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB ||
@@ -195,13 +194,12 @@ public class TabsFragment extends Fragment
             HorizontalScrollView tabScrollView = (HorizontalScrollView) getActivity()
                     .findViewById(R.id.tab_scroll_view);
 
-            AnimatorProxy.wrap(targetTab).setPivotY(-targetTab.getHeight() / 2);
-
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether(
-                    ObjectAnimator.ofFloat(targetTab, "scaleY", 1, 40 / 36),
-                    ObjectAnimator.ofInt(tabScrollView, "scrollX", newScrollX));
-            animatorSet.setDuration(240).start();
+            // フォーカスされたタブの高さを上げる
+            ViewPropertyAnimatorCompat tabAnimator = ViewCompat.animate(targetTab);
+            tabAnimator.scaleY(40 / 36).setDuration(240).start();
+            
+            // フォーカスされたタブが画面に入るように、タブ一覧を横にスクロールさせる
+            tabScrollView.smoothScrollTo(newScrollX, 0);
         }
 
     }
