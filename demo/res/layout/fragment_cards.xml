@@ -6,8 +6,9 @@
 
     <com.example.usemtburn_android_instream.view.RefreshableListView
         android:id="@+id/postListView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" /> 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_holo_light" />
 
     <View
         android:id="@+id/card_paper_view"

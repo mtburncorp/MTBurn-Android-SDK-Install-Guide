@@ -57,7 +57,7 @@
 </div>
 <div>
 <ul class="subNavList">
-<li>概要:&nbsp;</li>
+<li>サマリー:&nbsp;</li>
 <li>ネスト&nbsp;|&nbsp;</li>
 <li>フィールド&nbsp;|&nbsp;</li>
 <li>コンストラクタ&nbsp;|&nbsp;</li>
@@ -101,8 +101,8 @@
 <li class="blockList"><a name="method_summary">
 <!--   -->
 </a>
-<h3>メソッドの概要</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="メソッドの概要表、メソッドのリストおよび説明">
+<h3>メソッドのサマリー</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="メソッドのサマリー表、メソッドのリストおよび説明">
 <caption><span>メソッド</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">修飾子とタイプ</th>
@@ -115,17 +115,29 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#measureImp(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">measureImp</a></strong>(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</code>
+<div class="block">Sends an impression record to log the advertising performance.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>View</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#placeAd(com.mtburn.android.sdk.model.ADVSInstreamInfoModel, View, ViewGroup)">placeAd</a></strong>(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem,
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#placeAd(com.mtburn.android.sdk.model.ADVSInstreamInfoModel,%20View,%20ViewGroup)">placeAd</a></strong>(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem,
        View&nbsp;view,
        ViewGroup&nbsp;viewgroup)</code>
 <div class="block">Returns instream type advertisement view</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#registerAdViewBinder(com.mtburn.android.sdk.instream.ADVSInstreamAdViewBinder)">registerAdViewBinder</a></strong>(<a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdViewBinder.html" title="com.mtburn.android.sdk.instream内のインタフェース">ADVSInstreamAdViewBinder</a>&nbsp;viewBinder)</code>
 <div class="block">Binds the custom ad view format with corresponded to the ad data model</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#sendClickEvent(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">sendClickEvent</a></strong>(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</code>
+<div class="block">Sends a click record to log advertising performance.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -169,6 +181,28 @@
 <pre>void&nbsp;setAdListener(<a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacerListener.html" title="com.mtburn.android.sdk.instream内のインタフェース">ADVSInstreamAdPlacerListener</a>&nbsp;adListener)</pre>
 <div class="block">If you want to know results of loading, sets a listener to be informed about those.</div>
 <dl><dt><span class="strong">関連項目:</span></dt><dd><a href="../../../../../com/mtburn/android/sdk/instream/ADVSInstreamAdPlacerListener.html" title="com.mtburn.android.sdk.instream内のインタフェース"><code>ADVSInstreamAdPlacerListener</code></a></dd></dl>
+</li>
+</ul>
+<a name="measureImp(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>measureImp</h4>
+<pre>void&nbsp;measureImp(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</pre>
+<div class="block">Sends an impression record to log the advertising performance.</div>
+<dl><dt><span class="strong">パラメータ:</span></dt><dd><code>adItem</code> - An advertisement information model received from the callback of ADVSInstreamAdPlacerListener</dd></dl>
+</li>
+</ul>
+<a name="sendClickEvent(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendClickEvent</h4>
+<pre>void&nbsp;sendClickEvent(<a href="../../../../../com/mtburn/android/sdk/model/ADVSInstreamInfoModel.html" title="com.mtburn.android.sdk.model内のインタフェース">ADVSInstreamInfoModel</a>&nbsp;adItem)</pre>
+<div class="block">Sends a click record to log advertising performance.</div>
+<dl><dt><span class="strong">パラメータ:</span></dt><dd><code>adItem</code> - An advertisement information model received from the callback of ADVSInstreamAdPlacerListener</dd></dl>
 </li>
 </ul>
 <a name="placeAd(com.mtburn.android.sdk.model.ADVSInstreamInfoModel, View, ViewGroup)">
@@ -242,7 +276,7 @@
 </div>
 <div>
 <ul class="subNavList">
-<li>概要:&nbsp;</li>
+<li>サマリー:&nbsp;</li>
 <li>ネスト&nbsp;|&nbsp;</li>
 <li>フィールド&nbsp;|&nbsp;</li>
 <li>コンストラクタ&nbsp;|&nbsp;</li>

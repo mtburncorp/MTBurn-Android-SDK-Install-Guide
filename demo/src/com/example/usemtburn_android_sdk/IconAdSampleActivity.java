@@ -11,6 +11,7 @@ import com.mtburn.android.sdk.icon.ADVSIconAdLoader;
 import com.mtburn.android.sdk.icon.ADVSIconAdViewListener;
 import com.mtburn.android.sdk.icon.IconAdView;
 
+@SuppressWarnings("deprecation")
 public class IconAdSampleActivity extends Activity implements ADVSIconAdLoadListener, ADVSIconAdViewListener, ADVSAppImpLoadListener {
 
     private ADVSAppImpLoader appImpLoader;
