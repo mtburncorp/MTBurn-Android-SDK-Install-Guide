@@ -703,6 +703,8 @@ HTML を入稿することで、アプリ内 WebView 上で描画することが
 
 ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
+- ListView
+
 ```Java
 // (1) 必要なパッケージをインポート
 import com.mtburn.android.sdk.AppDavis;
@@ -780,6 +782,55 @@ public class MyActivity extends Activity {
 }
 ```
 
+- RecyclerView
+
+```java
+// (1) 必要なパッケージをインポート
+import com.mtburn.android.sdk.AppDavis;
+import com.mtburn.android.sdk.instream.ADVSInstreamAdPlacer;
+import com.mtburn.android.sdk.instream.InstreamAdViewBinderImpl;
+import com.mtburn.android.sdk.model.ADVSInstreamInfoModel;
+
+public class MyActivity extends Activity {
+
+    // (2) ADVSInstreamAdPlacer の定義
+    private ADVSInstreamAdPlacer adPlacer;
+	private RVAdapter adapter;
+
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.recycler);
+
+		// (3) 初期化の呼び出し
+		setupSDK();
+
+        RecyclerView rv = (RecyclerView)findViewById(R.id.recycler);
+        rv.setHasFixedSize(true);
+
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rv.setLayoutManager(llm);
+
+        initializeData();
+
+        adapter = new RVAdapter(persons, adPlacer);
+        rv.setAdapter(adapter);
+    }
+
+	...
+
+	// AppDavis SDK を初期化して、広告案件のロードを開始する
+    private void setupSDK() {
+        AppDavis.init(this.getApplicationContext(), getString(R.integer.media_id));
+        adPlacer = AppDavis.createInstreamAdPlacer(this.getApplicationContext(), getAdSpotId());
+        adPlacer.setAdListener(this);
+
+        // 広告読み込み開始
+        adPlacer.loadAd();
+    }
+}
+```
+
 <a name="infeed/custom/display_param"></a>
 ###カスタムインフィード広告の表示に用いるパラメーター
 
@@ -797,6 +848,8 @@ public class MyActivity extends Activity {
 カスタムインフィード広告を表示する際に、そのイベントを受け取りたい場合があります。
 
 その場合は ADVSInstreamAdPlacer に ADVSInstreamAdPlacerListener をセットします。
+
+- ListView
 
 ```Java
 ADVSInstreamAdPlacer adPlacer;
@@ -835,12 +888,45 @@ listener = new ADVSInstreamAdPlacerListener() {
 };
 ```
 
+- RecyclerView
+
+```java
+	// AppDavis SDK から広告案件情報のロード進捗を伝えるためのコールバック群
+
+    @Override
+	// (1) メイン画像ロード完了時
+    public void onAdMainImageLoaded(String imageUrl) {
+    }
+
+	// (2) アイコン画像ロード完了時
+    @Override
+    public void onAdIconImageLoaded(String imageUrl) {
+    }
+
+	// (3) メイン画像ロード失敗時
+    @Override
+    public void onAdImageLoadedFail(String imageUrl, String errorString) {
+    }
+
+	// (4) 広告のロード失敗時
+    @Override
+    public void onAdsLoadedFail(String errorString) {
+    }
+
+	// (5) 広告 View のクリック時
+    @Override
+    public void onAdClicked(String redirectURL) {
+    }
+```
+
 <a name="infeed/custom/display"></a>
 ###カスタムインフィード広告の表示
 
 ADVSInstreamAdPlacer を用いて以下の様に実装し、インフィード広告を表示します。
 
 ここでは、BaseAdapter 内での利用例を示していますが、これに限るものではありません。
+
+- ListView
 
 ```Java
 private class CustomInstreamSampleAdapter extends BaseAdapter {
@@ -904,6 +990,90 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
     }
     adapter.notifyDataSetChanged();
 }
+```
+
+- RecyclerView
+
+```java
+
+static class AdViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+	ADVSInstreamAdPlacer adPlacer;
+    ADVSInstreamInfoModel adData;
+
+	...
+
+	private static final int ITEM_VIEWTYPE_AD      = 0;
+    private static final int ITEM_VIEWTYPE_CONTENT = 1;
+
+    List<Object> persons;
+    private ADVSInstreamAdPlacer adPlacer;
+
+    RVAdapter(List<Object> persons, ADVSInstreamAdPlacer adPlacer){
+        this.persons = persons;
+        this.adPlacer = adPlacer;
+    }
+
+    @Override
+    public int getItemCount() {
+        return persons.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return isAd(position) ? ITEM_VIEWTYPE_AD : ITEM_VIEWTYPE_CONTENT;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v;
+        if (viewType == ITEM_VIEWTYPE_AD) {
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_instream_ad_view, parent, false);
+            return new AdViewHolder(v, adPlacer);
+        } else {
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card, parent, false);
+            return new PersonViewHolder(v);
+        }
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        if (holder.getItemViewType() == ITEM_VIEWTYPE_AD) {
+            ADVSInstreamInfoModel adInfo = (ADVSInstreamInfoModel) persons.get(position);
+            AdViewHolder avh = (AdViewHolder)holder;
+            avh.setData(adInfo);
+
+            // インプレッションを送信する（重複排除などは SDK がやるため、毎回通信などは発生しない）
+            adPlacer.measureImp(adInfo);
+        } else {
+            Person p = ((Person)persons.get(position));
+            PersonViewHolder pvh = (PersonViewHolder)holder;
+            pvh.personName.setText(p.name);
+            pvh.personAge.setText(p.age);
+            pvh.personPhoto.setImageResource(p.photoId);
+        }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    private boolean isAd(int position) {
+        return (persons.get(position) instanceof ADVSInstreamInfoModel) ? true : false;
+    }
+
+	// インフィード広告の情報を取得する
+	@Override
+    public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
+        App.logd("onAdsLoaded");
+
+        int i = 1;
+        for (ADVSInstreamInfoModel adData : items) {
+            persons.add(i, adData);
+            i += 2;
+        }
+        adapter.notifyDataSetChanged();
+    }
 ```
 
 <a name="update"></a>
