@@ -26,6 +26,7 @@
 		* [カスタムインフィード広告の表示に用いるパラメーター](#infeed/custom/display_param)
 		* [カスタムインフィード広告の表示時のイベント取得](#infeed/custom/event)
 		* [カスタムインフィード広告の表示](#infeed/custom/display)
+        * [ListView 以外を使う場合](#infeed/custom/recyclerview)
 * [更新履歴](#update)
 
 <a name="start"></a>
@@ -702,6 +703,9 @@ HTML を入稿することで、アプリ内 WebView 上で描画することが
 
 （例:「PR」・「Sponsored」・「Ad」・「広告」）
 
+以下の項目は、ListView の利用を前提としています。
+ListView 以外（例えば RecyclerView）を使う場合は、[ListView 以外を使う場合](#infeed/custom/recyclerview) を参照ください。
+
 <a name="infeed/custom/load"></a>
 ###カスタムインフィード広告のロード
 
@@ -909,6 +913,18 @@ public void onAdsLoaded(List<? extends ADVSInstreamInfoModel>items) {
     adapter.notifyDataSetChanged();
 }
 ```
+
+<a name="infeed/custom/recyclerview"></a>
+###ListView 以外を使う場合
+
+[RecyclerView を使ったサンプルコード](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo/src/com/example/usemtburn_android_instream/recyclerview) を確認ください
+
+実装上の重要な注意点は、明示的にインプレッションログの送信とクリックログの送信が必要な点です。
+
+- ListView を使う上記のサンプルは、[InstreamAdViewBinderImpl](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/com/mtburn/android/sdk/instream/InstreamAdViewBinderImpl.html) を実装しているので、明示的な呼び出しが不要です
+- RecyclerView など ListView 以外を使う場合は、InstreamAdViewBinderImpl を使うことができないので、新たに用意された <a href="http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#measureImp(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">measureImp</a> と <a href="http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/com/mtburn/android/sdk/instream/ADVSInstreamAdPlacer.html#sendClickEvent(com.mtburn.android.sdk.model.ADVSInstreamInfoModel)">sendClickEvent</a> をそれぞれ、広告を表示したときと広告をクリックしたときに呼び出す必要があります
+- ListView を使う場合でも InstreamAdViewBinderImpl を使わないで、明示的な送信 API を代わりに使うことは可能です
+ - その場合、InstreamAdViewBinderImpl と明示的な送信 API を併用しないよう注意ください（成果を 2 重に計上しようとして意図しない結果を引き起こす可能性があります）
 
 <a name="update"></a>
 # 更新履歴
