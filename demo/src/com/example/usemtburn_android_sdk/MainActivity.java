@@ -3,6 +3,7 @@ package com.example.usemtburn_android_sdk;
 import com.example.usemtburn_android_instream.activity.CustomInstreamAdSampleActivity;
 import com.example.usemtburn_android_instream.activity.InstreamAdSampleActivity;
 import com.example.usemtburn_android_instream.recyclerview.CustomInstreamAdSampleRecyclerActivity;
+import com.example.usemtburn_android_instream.simple.SimpleInstreamAdSampleActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -32,14 +33,18 @@ public class MainActivity extends Activity {
                     startWallAdSample();
                     break;
                 case 2:
-                    // instream ad (ListView)
+                    // simple instream ad (ListView)
                     startInstreamAdSample();
                     break;
                 case 3:
+                    // more simple instream ad (ListView)
+                    startSimpleInstreamAdSample();
+                    break;
+                case 4:
                     // custom instream ad (ListView)
                     startCustomInstreamAdSample();
                     break;
-                case 4:
+                case 5:
                     // custom instream ad (RecyclerView)
                     startCustomInstreamAdRecyclerSample();
                     break;
@@ -62,6 +67,11 @@ public class MainActivity extends Activity {
     
     private void startInstreamAdSample() {
         Intent intent = new Intent(this, InstreamAdSampleActivity.class);
+        startActivity(intent);
+    }
+    
+    private void startSimpleInstreamAdSample() {
+        Intent intent = new Intent(this, SimpleInstreamAdSampleActivity.class);
         startActivity(intent);
     }
     

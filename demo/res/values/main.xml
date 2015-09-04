@@ -6,13 +6,15 @@
     
     <string name="icon_ad_sample_title">Icon Ads</string>
     <string name="wall_ad_sample_title">Wall Ads</string>
-    <string name="instream_ad_sample_title">Native Ads</string>
+    <string name="instream_ad_sample_title">Native Ads (Simple)</string>
+    <string name="simple_instream_ad_sample_title">Native Ads 2 (Simple)</string>
     <string name="custom_instream_ad_sample_title">Native Ads (Custom)</string>
     <string name="custom_instream_ad_recycler_sample_title">Native Ads 2 (Custom)</string>
     <string-array name="sample_title_list">
         <item>@string/icon_ad_sample_title</item>
         <item>@string/wall_ad_sample_title</item>
         <item>@string/instream_ad_sample_title</item>
+        <item>@string/simple_instream_ad_sample_title</item>
         <item>@string/custom_instream_ad_sample_title</item>
         <item>@string/custom_instream_ad_recycler_sample_title</item>
     </string-array>
