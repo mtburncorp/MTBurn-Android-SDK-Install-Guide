@@ -701,7 +701,7 @@ HTML を入稿することで、アプリ内 WebView 上で描画することが
 
 実装する際に広告箇所が広告であることをユーザーが視認・理解できる文言を必ず記述して下さい。
 
-（例:「PR」・「Sponsored」・「Ad」・「広告」）
+- パラメーター `displayedAdvertiser` を使うことで広告ごとに適切な文言を表示することが出来ます。
 
 以下の項目は、ListView の利用を前提としています。
 ListView 以外（例えば RecyclerView）を使う場合は、[ListView 以外を使う場合](#infeed/custom/recyclerview) を参照ください。
