@@ -1,7 +1,7 @@
 # Table of Contents
 
 * [How to make Inquiries](#howto)
-* [What Type of Information Can be Acquired From the Terminal?](#info)
+* [What Type of Information Can be Acquired From the Device?](#info)
 * [Can the SDK Log Output be Controlled? ](#log)
 * [Is there a 〇〇 Function?](#function)
 * [Are there any Sample Projects? ](#sample)
@@ -12,10 +12,10 @@
 <a name="howto"></a>
 # How to Make Inquires
 
-### Confirm the following before making an inquiry. 
+### Confirm the following before making an inquiry.
 
 1. Consult the `Install-Guide` and [API specification](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
- doc to check that no method of resolution is given there. 
+ doc to check that no method of resolution is given there.
 2. Try running a [demo project](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo)
 3. Check [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues)
 
@@ -39,7 +39,7 @@
 ```
 
 <a name="info"></a>
-# What Type of Information Can be Acquired from the Terminal? 
+# What Type of Information Can be Acquired from the Device?
 
 - The following information can be acquired
 
@@ -47,7 +47,7 @@
 | --- | --- | --- |
 | advertising ID | `AdvertisingIdClient.Info getId()` | Is not available when the user has the opt-out setting |
 | OS version | `Build.VERSION.RELEASE` | `2.2`, `4.0.3 ` etc |
-| Terminal name | `Build.MODEL` | `Nexus One`, `X06HT` etc |
+| Device name | `Build.MODEL` | `Nexus One`, `X06HT` etc |
 | Language settings | `Locale.getDefault().getLanguage()` | `ja`, `en` etc |
 | Country code | `Locale.getDefault().getCountry()` | `JP`, `US` etc |
 
@@ -110,7 +110,7 @@ By default, [the demo project that came with the SDK](https://github.com/mtburn/
 Contact your representative if there is a problem with `your account.`
 
 <a name="version"></a>
-# What does the Version Number mean? 
+# What does the Version Number mean?
 
 This follows [semver](http://semver.org/)
 
