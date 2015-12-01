@@ -2,7 +2,7 @@
 
 * [まずはじめに](#start)
 	* [AndroidManifest.xml](#start/manifest)
-	* [Media Id の取得](#start/media_id)
+	* [Media ID の取得](#start/media_id)
 	* [コード内初期化](#start/init)
 * [(deprecated) ウォール広告](#wall)
 	* [ウォール広告の表示](#wall/display)
@@ -41,7 +41,7 @@ doc/index.html をお使いのブラウザで閲覧ください。
 <a name="start/manifest"></a>
 ## AndroidManifest.xml
 
-AndroidManifest.xmlに
+AndroidManifest.xmlに次の内容を記述ください。
 
 ```Java
 <!-- 必要なパーミッション -->
@@ -65,17 +65,17 @@ AndroidManifest.xmlに
 ```
 
 <a name="start/media_id"></a>
-##Media Id の取得
+##Media ID の取得
 
-管理画面より登録し、Media Id を発行します。
+管理画面より登録し、Media ID を発行します。
 
 **(現段階では担当者にお問い合わせください)**
 
-この Media Id はアプリの識別に用いるものですので、忘れない様にして下さい。
+この Media ID はアプリの識別に用いるものですので、忘れない様にして下さい。
 
 ### テスト用 ID
 
-テスト用の Media Id "1" または "2" をご利用いただくことができます。ダミーデータが表示され、動作確認が可能です。
+テスト用の Media ID "1" または "2" をご利用いただくことができます。ダミーデータが表示され、動作確認が可能です。
 
 <a name="start/init"></a>
 ##コード内初期化
@@ -398,7 +398,7 @@ setTextColor(int color), setTextColor(ColorStateList colors) | 文字色(RGB16�
 <a name="infeed/adspot_id"></a>
 ##広告枠 Id の取得
 
-Media Id の取得に加えて、事前に広告枠の登録を行います。以下の情報を設定し、広告枠IDが払い出されます。
+Media ID の取得に加えて、事前に広告枠の登録を行います。以下の情報を設定し、広告枠IDが払い出されます。
 
 - 広告枠名
 - [広告フォーマット](#利用可能な簡易版インフィード広告フォーマット)
@@ -409,7 +409,7 @@ Media Id の取得に加えて、事前に広告枠の登録を行います。�
 本物の案件とリンクしているため、下記案件数を下回る場合があります。
 その際は、担当者までご連絡ください。
 
-テスト用には、Media Id に "2" をセットした上で、下記広告枠 ID (adspot_id) をセットしてください
+テスト用には、Media ID に "2" をセットした上で、下記広告枠 ID (adspot_id) をセットしてください
 
 ```
 広告枠ID: NDQ0OjMx
