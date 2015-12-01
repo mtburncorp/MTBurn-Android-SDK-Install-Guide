@@ -82,14 +82,14 @@ The cause can be generally identified in the following order. The method of hand
 Here, `account` refers to the `media ID (media_id)` and the associated `advertisement ID (adspot_id)`.
 
 
-First, there may be a problem with the settings of the issued `account`. To test this, please try using a separate `account`. To use this separate `account`, refer to the `advertising framework IDs` linked to `media_id 1 or media_id 2` in this document.
+First, there may be a problem with the settings of the issued `account`. To test this, please try using a separate `account`. To use this separate `account`, refer to the `adspot ids` linked to `media_id 1 or media_id 2` in this document.
 
-As in the case of in-feed advertisements, `media_id 2` and its associated `advertising framework ID` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.  
+As in the case of in-feed advertisements, `media_id 2` and its associated `adspot id` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.  
 If the advertisement cannot be displayed even with `the test account used for displaying the main advertisement`, test `this by using a test account to display a test advertisement`. 
 
 `The test account for displaying the test advertisements` is `the media_id 1`, with the associated `advertisement ID`, is as follows.
 
-| Advertising framework ID corresponding to media_id 1 | Advertising framework ID corresponding to media_id 2 | Advertising image size | Advertisement format |
+| Ad Spot ID corresponding to media_id 1 | Ad Spot ID corresponding to media_id 2 | Advertising image size | Advertisement format |
 | --- | --- | --- | --- |
 | NDgzOjE | NDQ0OjMx | 114x114 pixel | ThumnailMiddle |
 | Njc4OjI | OTA2OjMy | 114x114 pixel | ThumnailSmall |
