@@ -27,7 +27,7 @@
 
 ### Inquiry Format
 
-- Copy and paste the following format and replace `---` with the actual content. 
+- Copy and paste the following format and replace `---` with the actual content.
  - Where `no log/project files are supplied`, it may take time to provide an answer; thus, please try to provide these where possible.
 
 ```
@@ -52,7 +52,7 @@
 | Country code | `Locale.getDefault().getCountry()` | `JP`, `US` etc |
 
 <a name="log"></a>
-# Can the SDK Log Output be Controlled? 
+# Can the SDK Log Output be Controlled?
 
 Write the following code in the place of your choice.
 
@@ -84,8 +84,8 @@ Here, `account` refers to the `media ID (media_id)` and the associated `advertis
 
 First, there may be a problem with the settings of the issued `account`. To test this, please try using a separate `account`. To use this separate `account`, refer to the `adspot ids` linked to `media_id 1 or media_id 2` in this document.
 
-As in the case of in-feed advertisements, `media_id 2` and its associated `adspot id` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.  
-If the advertisement cannot be displayed even with `the test account used for displaying the main advertisement`, test `this by using a test account to display a test advertisement`. 
+As in the case of in-feed advertisements, `media_id 2` and its associated `adspot id` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.
+If the advertisement cannot be displayed even with `the test account used for displaying the main advertisement`, test `this by using a test account to display a test advertisement`.
 
 `The test account for displaying the test advertisements` is `the media_id 1`, with the associated `advertisement ID`, is as follows.
 
