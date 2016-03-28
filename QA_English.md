@@ -12,31 +12,11 @@
 <a name="howto"></a>
 # How to Make Inquires
 
-### Confirm the following before making an inquiry.
-
-1. Consult the `Install-Guide` and [API specification](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
- doc to check that no method of resolution is given there.
-2. Try running a [demo project](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo)
-3. Check [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues)
-
 ### Inquiry
 
 - Please utilize the [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues)
 - When it is difficult to inquire using `issues`, contact your representative.
  - In this case, refer to this item for methods other than using your point of inquiry
-
-### Inquiry Format
-
-- Copy and paste the following format and replace `---` with the actual content. 
- - Where `no log/project files are supplied`, it may take time to provide an answer; thus, please try to provide these where possible.
-
-```
-- From when: ---
-- With what type of advertising: ---
-- Symptoms: ---
-- Reproduction conditions: ---
-- Log/project files when reproducing (where they exist): ---
-```
 
 <a name="info"></a>
 # What Type of Information Can be Acquired from the Device?
@@ -52,7 +32,7 @@
 | Country code | `Locale.getDefault().getCountry()` | `JP`, `US` etc |
 
 <a name="log"></a>
-# Can the SDK Log Output be Controlled? 
+# Can the SDK Log Output be Controlled?
 
 Write the following code in the place of your choice.
 
@@ -84,8 +64,8 @@ Here, `account` refers to the `media ID (media_id)` and the associated `advertis
 
 First, there may be a problem with the settings of the issued `account`. To test this, please try using a separate `account`. To use this separate `account`, refer to the `adspot ids` linked to `media_id 1 or media_id 2` in this document.
 
-As in the case of in-feed advertisements, `media_id 2` and its associated `adspot id` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.  
-If the advertisement cannot be displayed even with `the test account used for displaying the main advertisement`, test `this by using a test account to display a test advertisement`. 
+As in the case of in-feed advertisements, `media_id 2` and its associated `adspot id` (hereafter `the test account displaying the main advertisement`) may, in rare cases, be unable to acquire the advertisement.
+If the advertisement cannot be displayed even with `the test account used for displaying the main advertisement`, test `this by using a test account to display a test advertisement`.
 
 `The test account for displaying the test advertisements` is `the media_id 1`, with the associated `advertisement ID`, is as follows.
 

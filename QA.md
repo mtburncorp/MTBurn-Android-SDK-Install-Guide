@@ -12,30 +12,11 @@
 <a name="howto"></a>
 #問い合わせの仕方
 
-###問い合わせをする前に次のことをご確認ください
-
-1. `Install-Guide`, [API 仕様 doc](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/) を確認する、特に`よくある質問` の内容にすでに解決策がないか確認する
-2. [デモプロジェクト](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo) を動かしてみる、また、ソースコードの該当箇所を確認する
-3. [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues) を確認する
-
 ###問い合わせ先
 
 - [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues) を活用ください
 - 何らかの理由により、`issues` による問い合わせが難しい場合には、担当者を介して問い合わせください
  - その場合も問い合わせ先以外の仕方はこの項を参考にしてください
-
-###問い合わせフォーマット
-
-- 次のフォーマットをコピーペーストして、`---` を実際の内容で置き換えてください
- - `再現した際のログ/プロジェクトファイル` がない場合は回答に時間がかかる可能性がありますので、できる限りご用意ください
-
-```
-- いつから: ---
-- どの広告種別で: ---
-- 症状: ---
-- 再現条件: ---
-- 再現した際のログ/プロジェクトファイル(あれば): ---
-```
 
 <a name="info"></a>
 #端末からどのような情報を取得していますか？
