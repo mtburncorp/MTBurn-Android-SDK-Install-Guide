@@ -12,31 +12,11 @@
 <a name="howto"></a>
 # How to Make Inquires
 
-### Confirm the following before making an inquiry.
-
-1. Consult the `Install-Guide` and [API specification](http://mtburn.github.io/MTBurn-Android-SDK-Install-Guide/javadoc/latest/)
- doc to check that no method of resolution is given there.
-2. Try running a [demo project](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/tree/master/demo)
-3. Check [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues)
-
 ### Inquiry
 
 - Please utilize the [issues](https://github.com/mtburn/MTBurn-Android-SDK-Install-Guide/issues)
 - When it is difficult to inquire using `issues`, contact your representative.
  - In this case, refer to this item for methods other than using your point of inquiry
-
-### Inquiry Format
-
-- Copy and paste the following format and replace `---` with the actual content.
- - Where `no log/project files are supplied`, it may take time to provide an answer; thus, please try to provide these where possible.
-
-```
-- From when: ---
-- With what type of advertising: ---
-- Symptoms: ---
-- Reproduction conditions: ---
-- Log/project files when reproducing (where they exist): ---
-```
 
 <a name="info"></a>
 # What Type of Information Can be Acquired from the Device?
